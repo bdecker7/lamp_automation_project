@@ -78,6 +78,19 @@ void max_to_min(){
         }
 }
 
+void angle_test(){
+            // Angle test: 0 -> 90 -> 180 -> 90
+        ESP_LOGI(TAG, "Angle test");
+        servo_set_angle(0);
+        vTaskDelay(pdMS_TO_TICKS(500));
+        servo_set_angle(90);
+        vTaskDelay(pdMS_TO_TICKS(500));
+        servo_set_angle(180);
+        vTaskDelay(pdMS_TO_TICKS(500));
+        servo_set_angle(90);
+        vTaskDelay(pdMS_TO_TICKS(500));
+}
+
 void app_main(void)
 {
     // Configure LEDC timer
@@ -110,16 +123,6 @@ void app_main(void)
     while (1) {
         min_to_max();
         max_to_min();
-
-        // Angle test: 0 -> 90 -> 180 -> 90
-        ESP_LOGI(TAG, "Angle test");
-        servo_set_angle(0);
-        vTaskDelay(pdMS_TO_TICKS(500));
-        servo_set_angle(90);
-        vTaskDelay(pdMS_TO_TICKS(500));
-        servo_set_angle(180);
-        vTaskDelay(pdMS_TO_TICKS(500));
-        servo_set_angle(90);
-        vTaskDelay(pdMS_TO_TICKS(500));
+        //angle_test();
     }
 }
