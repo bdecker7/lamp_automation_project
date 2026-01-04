@@ -2,8 +2,10 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/ledc.h"
-#include "esp_err.h"
+#include "driver/gpio.h"
 #include "esp_log.h"
+#include "esp_err.h"
+#include "esp_timer.h"
 
 // ====== Configuration ======
 #define TAG                 "SERVO"
@@ -15,20 +17,58 @@
 #define SERVO_PWM_RES       (LEDC_TIMER_14_BIT)      // ESP32-S2 supports up to 14-bit LS mode
 #define SERVO_MAX_DUTY      ((1 << 14) - 1)          // 16383
 
+// --- Button config (active-low recommended) ---
+#define BUTTON_GPIO             (GPIO_NUM_9)   // CHANGE to your actual button GPIO
+#define BUTTON_ACTIVE_LEVEL     (0)            // 0 if button to GND with pull-up, 1 if to VCC with pull-down
+#define BUTTON_DEBOUNCE_MS      (250)          // ignore retriggers within 250 ms
+
+
 // Start with a conservative, safe range to avoid binding.
 // Expand once you confirm stable motion (e.g., to 1000..2000, or your servo's spec).
-#define SERVO_SAFE_MIN_US   (1100)
-#define SERVO_SAFE_MID_US   (1500)
-#define SERVO_SAFE_MAX_US   (1900)
+#define SERVO_SAFE_MIN_US   (1000)
+#define SERVO_SAFE_MID_US   (1450)
+#define SERVO_SAFE_MAX_US   (1800)
 
 // For angle mapping; adjust these once you know your servo endpoints.
 #define SERVO_MIN_ANGLE_DEG (0.0f)
 #define SERVO_MAX_ANGLE_DEG (180.0f)
 
+// ===== Globals =====
+static volatile bool g_trigger_cycle = false;
+static volatile int64_t g_last_press_us = 0;
+
 // Current endpoints that map to angles:
 static float pulse_min_us = SERVO_SAFE_MIN_US;
 static float pulse_mid_us = SERVO_SAFE_MID_US;
 static float pulse_max_us = SERVO_SAFE_MAX_US;
+
+// ===== Button ISR & setup =====
+static void IRAM_ATTR button_isr(void *arg)
+{
+    int level = gpio_get_level(BUTTON_GPIO);
+    // Trigger only when we detect the active level (press)
+    if (level == BUTTON_ACTIVE_LEVEL) {
+        int64_t now_us = esp_timer_get_time();
+        if (now_us - g_last_press_us > (int64_t)BUTTON_DEBOUNCE_MS * 1000) {
+            g_last_press_us = now_us;
+            g_trigger_cycle = true;  // tell the main loop to run one cycle
+        }
+    }
+}
+
+static void button_init(void)
+{
+    gpio_config_t io_conf = {
+        .pin_bit_mask   = (1ULL << BUTTON_GPIO),
+        .mode           = GPIO_MODE_INPUT,
+        .pull_up_en     = (BUTTON_ACTIVE_LEVEL == 0) ? GPIO_PULLUP_ENABLE  : GPIO_PULLUP_DISABLE,
+        .pull_down_en   = (BUTTON_ACTIVE_LEVEL == 1) ? GPIO_PULLDOWN_ENABLE: GPIO_PULLDOWN_DISABLE,
+        .intr_type      = GPIO_INTR_ANYEDGE  // use ANYEDGE, and gate inside ISR on active level
+    };
+    ESP_ERROR_CHECK(gpio_config(&io_conf));
+    ESP_ERROR_CHECK(gpio_install_isr_service(0));
+    ESP_ERROR_CHECK(gpio_isr_handler_add(BUTTON_GPIO, button_isr, NULL));
+}
 
 static inline uint32_t pulsewidth_us_to_duty(float pulse_us)
 {
@@ -91,38 +131,41 @@ void angle_test(){
         vTaskDelay(pdMS_TO_TICKS(500));
 }
 
-void app_main(void)
-{
-    // Configure LEDC timer
-    ledc_timer_config_t timer_conf = {
-        .speed_mode       = SERVO_LEDC_MODE,
-        .timer_num        = SERVO_LEDC_TIMER,
-        .duty_resolution  = SERVO_PWM_RES,
-        .freq_hz          = SERVO_PWM_FREQ_HZ,
-        .clk_cfg          = LEDC_AUTO_CLK
-    };
-    ESP_ERROR_CHECK(ledc_timer_config(&timer_conf));
+// void app_main(void)
+// {
+//     // Configure LEDC timer
+//     ledc_timer_config_t timer_conf = {
+//         .speed_mode       = SERVO_LEDC_MODE,
+//         .timer_num        = SERVO_LEDC_TIMER,
+//         .duty_resolution  = SERVO_PWM_RES,
+//         .freq_hz          = SERVO_PWM_FREQ_HZ,
+//         .clk_cfg          = LEDC_AUTO_CLK
+//     };
+//     ESP_ERROR_CHECK(ledc_timer_config(&timer_conf));
 
-    // Configure LEDC channel on your GPIO
-    ledc_channel_config_t ch_conf = {
-        .gpio_num       = SERVO_GPIO,
-        .speed_mode     = SERVO_LEDC_MODE,
-        .channel        = SERVO_LEDC_CHANNEL,
-        .intr_type      = LEDC_INTR_DISABLE,
-        .timer_sel      = SERVO_LEDC_TIMER,
-        .duty           = 0,
-        .hpoint         = 0
-    };
-    ESP_ERROR_CHECK(ledc_channel_config(&ch_conf));
+//     // Configure LEDC channel on your GPIO
+//     ledc_channel_config_t ch_conf = {
+//         .gpio_num       = SERVO_GPIO,
+//         .speed_mode     = SERVO_LEDC_MODE,
+//         .channel        = SERVO_LEDC_CHANNEL,
+//         .intr_type      = LEDC_INTR_DISABLE,
+//         .timer_sel      = SERVO_LEDC_TIMER,
+//         .duty           = 0,
+//         .hpoint         = 0
+//     };
+//     ESP_ERROR_CHECK(ledc_channel_config(&ch_conf));
 
-    // Move to mid first
-    ESP_ERROR_CHECK(servo_set_pulse_us(pulse_mid_us));
-    vTaskDelay(pdMS_TO_TICKS(500));
+//     // Move to mid first
+//     ESP_ERROR_CHECK(servo_set_pulse_us(pulse_mid_us));
+//     vTaskDelay(pdMS_TO_TICKS(500));
 
-    // Calibration sweep: safe min -> max -> min using ~20ms cadence
-    while (1) {
-        min_to_max();
-        max_to_min();
-        //angle_test();
-    }
-}
+ 
+//     bool flag = true;
+//     while (1) {
+//         if(){
+//             min_to_max();
+//             max_to_min();
+//         }
+
+//     }
+// }
