@@ -39,18 +39,7 @@
 #define REVERSE_HOLD_MS         (200)       //time the reverse motion is on
 #define NEUTRAL_SETTLE_MS       (1000)      //hold time in between the forward and backward motion
 
-// Angle mapping range
-#define SERVO_MIN_ANGLE_DEG     (0.0f)
-#define SERVO_MAX_ANGLE_DEG     (180.0f)
 
-#define SERVO_SAFE_MIN_US       (1000)
-#define SERVO_SAFE_MID_US       (1450)
-#define SERVO_SAFE_MAX_US       (1800)
-
-// Current endpoints that map to angles:
-static float pulse_min_us = SERVO_SAFE_MIN_US;
-static float pulse_mid_us = SERVO_SAFE_MID_US;
-static float pulse_max_us = SERVO_SAFE_MAX_US;
 
 // --- Button config (active-low recommended) ---
 #define BUTTON_GPIO             (GPIO_NUM_4)
@@ -120,7 +109,7 @@ static void servo_ramp_speed(float start_speed, float end_speed, int steps, int 
     }
 }
 
-// ===== Motion cycle: Forward -> Stop -> Reverse -> Stop =====
+// ===== Motion cycle: Forward -> Stop -> Reverse -> Stop ===== (for continuous motion servo)
 static void perform_cycle(void)
 {
     const float START = 0.0f;
@@ -141,41 +130,6 @@ static void perform_cycle(void)
     servo_ramp_speed(REVERSE_SPEED, START, RAMP_STEPS, RAMP_MS_PER_STEP);
 
     (void)servo_set_speed(0.0f);  // final stop
-}
-
-// Map 0..180° piecewise to safe endpoints: 0..90 → min..mid, 90..180 → mid..max
-static inline float angle_to_pulse_us_safe(float deg)
-{
-    // Clamp angle
-    if (deg < SERVO_MIN_ANGLE_DEG) deg = SERVO_MIN_ANGLE_DEG;
-    if (deg > SERVO_MAX_ANGLE_DEG) deg = SERVO_MAX_ANGLE_DEG;
-
-    if (deg <= 90.0f) {
-        // 0..90 → min..mid
-        const float t = deg / 90.0f;
-        return pulse_min_us + t * (pulse_mid_us - pulse_min_us);
-    } else {
-        // 90..180 → mid..max
-        const float t = (deg - 90.0f) / 90.0f;
-        return pulse_mid_us + t * (pulse_max_us - pulse_mid_us);
-    }
-}
-
-static inline esp_err_t servo_set_angle(float deg)
-{
-    float pulse_us = angle_to_pulse_us_safe(deg);
-    return servo_set_pulse_us(pulse_us);
-}
-
-
-static void small_motor_move(void)
-{
-    servo_set_angle(0);
-    vTaskDelay(pdMS_TO_TICKS(1000));
-    servo_set_angle(180);
-    vTaskDelay(pdMS_TO_TICKS(1000));
-    servo_set_angle(0);
-
 }
 
 
@@ -205,49 +159,49 @@ static void button_init(void)
     ESP_ERROR_CHECK(gpio_isr_handler_add(BUTTON_GPIO, button_isr, NULL));
 }
 
-void app_main(void)
-{
-    // LEDC timer
-    ledc_timer_config_t timer_conf = {
-        .speed_mode       = SERVO_LEDC_MODE,
-        .timer_num        = SERVO_LEDC_TIMER,
-        .duty_resolution  = SERVO_PWM_RES,
-        .freq_hz          = SERVO_PWM_FREQ_HZ,
-        .clk_cfg          = LEDC_AUTO_CLK
-    };
-    ESP_ERROR_CHECK(ledc_timer_config(&timer_conf));
+// void app_main(void)
+// {
+//     // LEDC timer
+//     ledc_timer_config_t timer_conf = {
+//         .speed_mode       = SERVO_LEDC_MODE,
+//         .timer_num        = SERVO_LEDC_TIMER,
+//         .duty_resolution  = SERVO_PWM_RES,
+//         .freq_hz          = SERVO_PWM_FREQ_HZ,
+//         .clk_cfg          = LEDC_AUTO_CLK
+//     };
+//     ESP_ERROR_CHECK(ledc_timer_config(&timer_conf));
 
-    // LEDC channel
-    ledc_channel_config_t ch_conf = {
-        .gpio_num       = SERVO_GPIO,
-        .speed_mode     = SERVO_LEDC_MODE,
-        .channel        = SERVO_LEDC_CHANNEL,
-        .intr_type      = LEDC_INTR_DISABLE,
-        .timer_sel      = SERVO_LEDC_TIMER,
-        .duty           = 0,
-        .hpoint         = 0
-    };
-    ESP_ERROR_CHECK(ledc_channel_config(&ch_conf));
+//     // LEDC channel
+//     ledc_channel_config_t ch_conf = {
+//         .gpio_num       = SERVO_GPIO,
+//         .speed_mode     = SERVO_LEDC_MODE,
+//         .channel        = SERVO_LEDC_CHANNEL,
+//         .intr_type      = LEDC_INTR_DISABLE,
+//         .timer_sel      = SERVO_LEDC_TIMER,
+//         .duty           = 0,
+//         .hpoint         = 0
+//     };
+//     ESP_ERROR_CHECK(ledc_channel_config(&ch_conf));
 
-    // Button
-    button_init();
+//     // Button
+//     button_init();
 
-    // Start stopped at neutral
-    ESP_ERROR_CHECK(servo_set_speed(0.0f));
-    ESP_LOGI(TAG, "Ready. Press button for forward then reverse cycle (CR servo).");
+//     // Start stopped at neutral
+//     ESP_ERROR_CHECK(servo_set_speed(0.0f));
+//     ESP_LOGI(TAG, "Ready. Press button for forward then reverse cycle (CR servo).");
 
 
-    // When button is pressed, g_trigger_cycle returns true and performs the rotation for the servo
-    // If button is not pressed, then it is stopped and does nothing.
-    while (1) {
-        if (g_trigger_cycle) {
-            g_trigger_cycle = false;   // consume event
-            // perform_cycle();
-            small_motor_move();
-            vTaskDelay(pdMS_TO_TICKS(100)); // small post-cycle delay
-        } else {
-            vTaskDelay(pdMS_TO_TICKS(10));
-        }
-    }
-}
+//     // When button is pressed, g_trigger_cycle returns true and performs the rotation for the servo
+//     // If button is not pressed, then it is stopped and does nothing.
+//     while (1) {
+//         if (g_trigger_cycle) {
+//             g_trigger_cycle = false;   // consume event
+//             perform_cycle();
+//             
+//             vTaskDelay(pdMS_TO_TICKS(100)); // small post-cycle delay
+//         } else {
+//             vTaskDelay(pdMS_TO_TICKS(10));
+//         }
+//     }
+// }
 
