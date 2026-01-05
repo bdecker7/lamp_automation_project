@@ -33,11 +33,24 @@
 #define TARGET_SPEED            (-0.7f)    // (unused now—use FORWARD/REVERSE below)
 
 // --- NEW: Bidirectional speeds/holds ---
-#define FORWARD_SPEED           (+0.7f)
-#define REVERSE_SPEED           (-0.7f)
-#define FORWARD_HOLD_MS         (200)
-#define REVERSE_HOLD_MS         (200)
-#define NEUTRAL_SETTLE_MS       (120)
+#define FORWARD_SPEED           (+0.65f)    //speed of the forward motion (seems like this is a bit faster so I made it less than reverse speed)
+#define REVERSE_SPEED           (-0.7f)     //speed of the reverse motion
+#define FORWARD_HOLD_MS         (200)       //time the forward motion is on
+#define REVERSE_HOLD_MS         (200)       //time the reverse motion is on
+#define NEUTRAL_SETTLE_MS       (1000)      //hold time in between the forward and backward motion
+
+// Angle mapping range
+#define SERVO_MIN_ANGLE_DEG     (0.0f)
+#define SERVO_MAX_ANGLE_DEG     (180.0f)
+
+#define SERVO_SAFE_MIN_US       (1000)
+#define SERVO_SAFE_MID_US       (1450)
+#define SERVO_SAFE_MAX_US       (1800)
+
+// Current endpoints that map to angles:
+static float pulse_min_us = SERVO_SAFE_MIN_US;
+static float pulse_mid_us = SERVO_SAFE_MID_US;
+static float pulse_max_us = SERVO_SAFE_MAX_US;
 
 // --- Button config (active-low recommended) ---
 #define BUTTON_GPIO             (GPIO_NUM_4)
@@ -130,6 +143,43 @@ static void perform_cycle(void)
     (void)servo_set_speed(0.0f);  // final stop
 }
 
+// Map 0..180° piecewise to safe endpoints: 0..90 → min..mid, 90..180 → mid..max
+static inline float angle_to_pulse_us_safe(float deg)
+{
+    // Clamp angle
+    if (deg < SERVO_MIN_ANGLE_DEG) deg = SERVO_MIN_ANGLE_DEG;
+    if (deg > SERVO_MAX_ANGLE_DEG) deg = SERVO_MAX_ANGLE_DEG;
+
+    if (deg <= 90.0f) {
+        // 0..90 → min..mid
+        const float t = deg / 90.0f;
+        return pulse_min_us + t * (pulse_mid_us - pulse_min_us);
+    } else {
+        // 90..180 → mid..max
+        const float t = (deg - 90.0f) / 90.0f;
+        return pulse_mid_us + t * (pulse_max_us - pulse_mid_us);
+    }
+}
+
+static inline esp_err_t servo_set_angle(float deg)
+{
+    float pulse_us = angle_to_pulse_us_safe(deg);
+    return servo_set_pulse_us(pulse_us);
+}
+
+
+static void small_motor_move(void)
+{
+    servo_set_angle(0);
+    vTaskDelay(pdMS_TO_TICKS(1000));
+    servo_set_angle(180);
+    vTaskDelay(pdMS_TO_TICKS(1000));
+    servo_set_angle(0);
+
+}
+
+
+
 // ===== Button ISR & setup =====
 static void IRAM_ATTR button_isr(void *arg)
 {
@@ -186,10 +236,14 @@ void app_main(void)
     ESP_ERROR_CHECK(servo_set_speed(0.0f));
     ESP_LOGI(TAG, "Ready. Press button for forward then reverse cycle (CR servo).");
 
+
+    // When button is pressed, g_trigger_cycle returns true and performs the rotation for the servo
+    // If button is not pressed, then it is stopped and does nothing.
     while (1) {
         if (g_trigger_cycle) {
             g_trigger_cycle = false;   // consume event
-            perform_cycle();
+            // perform_cycle();
+            small_motor_move();
             vTaskDelay(pdMS_TO_TICKS(100)); // small post-cycle delay
         } else {
             vTaskDelay(pdMS_TO_TICKS(10));
