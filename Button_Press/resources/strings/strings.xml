@@ -1,0 +1,8 @@
+<strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <string id="AppName">Button_Press</string>
+
+    <string id="prompt">Lights</string>
+
+    <string id="menu_label_1">Light On</string>
+    <string id="menu_label_2">Light Off</string>
+</strings>

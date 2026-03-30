@@ -1,0 +1,1754 @@
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [WatchUi,3,13,20]; @symbol_usingAlias = [Ui,3,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Graphics,4,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Graphics,5,13,21]; @symbol_usingAlias = [Gfx,5,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 7; @symbol_moduledef = [Rez,7,7,10]; ]
+module Rez {
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 8; @symbol_moduledef = [Drawables,8,11,20]; ]
+    module Drawables {
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 9; @position = 27; initialized = true; @symbol_vardef = [id_logo,9,27,34]; @symbol_type<0> = [ResourceId,9,38,48]; ]
+        var id_logo as ResourceId;
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 10; @position = 27; initialized = true; @symbol_vardef = [LauncherIcon,10,27,39]; @symbol_type<0> = [ResourceId,10,43,53]; ]
+        var LauncherIcon as ResourceId;
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 13; @symbol_moduledef = [Layouts,13,11,18]; ]
+    module Layouts {
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 13; ]
+        <init> {
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 14; @symbol_functiondef = [MainLayout,14,17,27]; @symbol_param<0> = [dc,14,28,30]; @symbol_param<0>_type<0> = [Graphics,14,34,42]; @symbol_param<0>_type<1> = [Dc,14,43,45]; @symbol_return<0> = [Array,14,50,55]; @symbol_return<1> = [WatchUi,14,56,63]; @symbol_return<2> = [Drawable,14,64,72]; ]
+        function MainLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_Instinct_app_build_folder_gen_006_B3888_00_source_Rez_mcgen_14_74_23_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 15 12 ]
+            [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_Instinct_app_build_folder_gen_006_B3888_00_source_Rez_mcgen_14_74_23_8_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_Instinct_app_build_folder_gen_006_B3888_00_source_Rez_mcgen_14_74_23_8_stop" ]
+            %rez_cmp_local_var_dc_getWidth.1 = local;
+            symbol [ rez_cmp_local_var_dc_getWidth %rez_cmp_local_var_dc_getWidth.1 15 16 45 ];
+            %tmp.1 = lgetv %dc;
+            symbol [ dc %tmp.1 15 48 50 ];
+            symbol [ getWidth %tmp.2 15 51 59 ];
+            %tmp.2 = getv function %tmp.1 :getWidth;
+            %tmp.3 = invoke %tmp.1 %tmp.2();
+            lputv %rez_cmp_local_var_dc_getWidth.1 %tmp.3;
+            symbol [ rez_cmp_local_var_dc_getWidth %rez_cmp_local_var_dc_getWidth.1 15 16 45 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 17 12 ]
+            [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_Instinct_app_build_folder_gen_006_B3888_00_source_Rez_mcgen_14_74_23_8_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_Instinct_app_build_folder_gen_006_B3888_00_source_Rez_mcgen_14_74_23_8_stop" ]
+            %rez_cmp_local_text_1193959466.2 = local;
+            symbol [ rez_cmp_local_text_1193959466 %rez_cmp_local_text_1193959466.2 17 16 45 ];
+            symbol [ WatchUi %tmp.6 17 52 59 ];
+            %tmp.6 = getm $.Toybox.WatchUi;
+            symbol [ Text %tmp.7 17 60 64 ];
+            %tmp.7 = getv function ? %tmp.6 :Text;
+            %tmp.8 = newd 6;
+            %tmp.10 = const :color;
+            symbol [ color %tmp.10 17 67 72 const ];
+            symbol [ Graphics %tmp.11 17 74 82 ];
+            %tmp.11 = getm $.Toybox.Graphics;
+            symbol [ COLOR_WHITE %tmp.12 17 83 94 ];
+            %tmp.12 = getv %tmp.11 :COLOR_WHITE;
+            %tmp.13 = dup %tmp.8;
+            %tmp.14 = aputv %tmp.13 %tmp.10 %tmp.12;
+            %tmp.16 = const :locX;
+            symbol [ locX %tmp.16 17 97 101 const ];
+            %tmp.17 = lgetv %rez_cmp_local_var_dc_getWidth.1;
+            symbol [ rez_cmp_local_var_dc_getWidth %tmp.17 17 104 133 ];
+            %tmp.18 = 0.5;
+            %tmp.19 = mul %tmp.17 %tmp.18;
+            %tmp.20 = dup %tmp.14;
+            %tmp.21 = aputv %tmp.20 %tmp.16 %tmp.19;
+            %tmp.23 = const :locY;
+            symbol [ locY %tmp.23 17 143 147 const ];
+            %tmp.24 = 85;
+            %tmp.25 = dup %tmp.21;
+            %tmp.26 = aputv %tmp.25 %tmp.23 %tmp.24;
+            %tmp.28 = const :text;
+            symbol [ text %tmp.28 17 154 158 const ];
+            symbol [ $ %tmp.29 17 160 161 ];
+            %tmp.29 = getm $;
+            symbol [ Rez %tmp.30 17 162 165 ];
+            %tmp.30 = getv %tmp.29 :Rez;
+            symbol [ Strings %tmp.31 17 166 173 ];
+            %tmp.31 = getv %tmp.30 :Strings;
+            symbol [ prompt %tmp.32 17 174 180 ];
+            %tmp.32 = getv %tmp.31 :prompt;
+            %tmp.33 = dup %tmp.26;
+            %tmp.34 = aputv %tmp.33 %tmp.28 %tmp.32;
+            %tmp.36 = const :justification;
+            symbol [ justification %tmp.36 17 183 196 const ];
+            symbol [ Graphics %tmp.37 17 198 206 ];
+            %tmp.37 = getm $.Toybox.Graphics;
+            symbol [ TEXT_JUSTIFY_CENTER %tmp.38 17 207 226 ];
+            %tmp.38 = getv %tmp.37 :TEXT_JUSTIFY_CENTER;
+            %tmp.39 = dup %tmp.34;
+            %tmp.40 = aputv %tmp.39 %tmp.36 %tmp.38;
+            %tmp.42 = const :font;
+            symbol [ font %tmp.42 17 229 233 const ];
+            symbol [ Graphics %tmp.43 17 235 243 ];
+            %tmp.43 = getm $.Toybox.Graphics;
+            symbol [ FONT_MEDIUM %tmp.44 17 244 255 ];
+            %tmp.44 = getv %tmp.43 :FONT_MEDIUM;
+            %tmp.45 = dup %tmp.40;
+            %tmp.46 = aputv %tmp.45 %tmp.42 %tmp.44;
+            %tmp.4 = newc %tmp.7 (%tmp.46);
+            lputv %rez_cmp_local_text_1193959466.2 %tmp.4;
+            symbol [ rez_cmp_local_text_1193959466 %rez_cmp_local_text_1193959466.2 17 16 45 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 19 12 ]
+            [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_Instinct_app_build_folder_gen_006_B3888_00_source_Rez_mcgen_14_74_23_8_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_Instinct_app_build_folder_gen_006_B3888_00_source_Rez_mcgen_14_74_23_8_stop" ]
+            %rez_cmp_local_bitmap_id_logo.3 = local;
+            symbol [ rez_cmp_local_bitmap_id_logo %rez_cmp_local_bitmap_id_logo.3 19 16 44 ];
+            symbol [ WatchUi %tmp.49 19 51 58 ];
+            %tmp.49 = getm $.Toybox.WatchUi;
+            symbol [ Bitmap %tmp.50 19 59 65 ];
+            %tmp.50 = getv function ? %tmp.49 :Bitmap;
+            %tmp.51 = newd 4;
+            %tmp.53 = const :identifier;
+            symbol [ identifier %tmp.53 19 68 78 const ];
+            %tmp.54 = "id_logo";
+            %tmp.55 = dup %tmp.51;
+            %tmp.56 = aputv %tmp.55 %tmp.53 %tmp.54;
+            %tmp.58 = const :rezId;
+            symbol [ rezId %tmp.58 19 92 97 const ];
+            symbol [ $ %tmp.59 19 99 100 ];
+            %tmp.59 = getm $;
+            symbol [ Rez %tmp.60 19 101 104 ];
+            %tmp.60 = getv %tmp.59 :Rez;
+            symbol [ Drawables %tmp.61 19 105 114 ];
+            %tmp.61 = getv %tmp.60 :Drawables;
+            symbol [ id_logo %tmp.62 19 115 122 ];
+            %tmp.62 = getv %tmp.61 :id_logo;
+            %tmp.63 = dup %tmp.56;
+            %tmp.64 = aputv %tmp.63 %tmp.58 %tmp.62;
+            %tmp.66 = const :locX;
+            symbol [ locX %tmp.66 19 125 129 const ];
+            symbol [ WatchUi %tmp.67 19 131 138 ];
+            %tmp.67 = getm $.Toybox.WatchUi;
+            symbol [ LAYOUT_HALIGN_CENTER %tmp.68 19 139 159 ];
+            %tmp.68 = getv %tmp.67 :LAYOUT_HALIGN_CENTER;
+            %tmp.69 = dup %tmp.64;
+            %tmp.70 = aputv %tmp.69 %tmp.66 %tmp.68;
+            %tmp.72 = const :locY;
+            symbol [ locY %tmp.72 19 162 166 const ];
+            %tmp.73 = 50;
+            %tmp.74 = dup %tmp.70;
+            %tmp.75 = aputv %tmp.74 %tmp.72 %tmp.73;
+            %tmp.47 = newc %tmp.50 (%tmp.75);
+            lputv %rez_cmp_local_bitmap_id_logo.3 %tmp.47;
+            symbol [ rez_cmp_local_bitmap_id_logo %rez_cmp_local_bitmap_id_logo.3 19 16 44 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 20 12 ]
+            %tmp.76 = lgetv %rez_cmp_local_bitmap_id_logo.3;
+            symbol [ rez_cmp_local_bitmap_id_logo %tmp.76 20 12 40 ];
+            symbol [ setLocation %tmp.77 20 41 52 ];
+            %tmp.77 = getv function %tmp.76 :setLocation;
+            %tmp.78 = lgetv %rez_cmp_local_var_dc_getWidth.1;
+            symbol [ rez_cmp_local_var_dc_getWidth %tmp.78 20 55 84 ];
+            %tmp.79 = lgetv %rez_cmp_local_bitmap_id_logo.3;
+            symbol [ rez_cmp_local_bitmap_id_logo %tmp.79 20 87 115 ];
+            symbol [ width %tmp.80 20 116 121 ];
+            %tmp.80 = getv %tmp.79 :width;
+            %tmp.81 = sub %tmp.78 %tmp.80;
+            %tmp.82 = 0.5;
+            %tmp.83 = mul %tmp.81 %tmp.82;
+            %tmp.84 = lgetv %rez_cmp_local_bitmap_id_logo.3;
+            symbol [ rez_cmp_local_bitmap_id_logo %tmp.84 20 131 159 ];
+            symbol [ locY %tmp.85 20 160 164 ];
+            %tmp.85 = getv %tmp.84 :locY;
+            invoke %tmp.76 %tmp.77(%tmp.83, %tmp.85);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 22 12 ]
+            %tmp.86 = newa 2 Array<WatchUi.Drawable>;
+            symbol [ Array %tmp.86 22 84 89 ];
+            symbol [ WatchUi %tmp.86 22 90 97 ];
+            symbol [ Drawable %tmp.86 22 98 106 ];
+            %tmp.87 = lgetv %rez_cmp_local_text_1193959466.2;
+            symbol [ rez_cmp_local_text_1193959466 %tmp.87 22 20 49 ];
+            %tmp.88 = dup %tmp.86;
+            %tmp.89 = aputv %tmp.88 0 %tmp.87;
+            %tmp.90 = lgetv %rez_cmp_local_bitmap_id_logo.3;
+            symbol [ rez_cmp_local_bitmap_id_logo %tmp.90 22 51 79 ];
+            %tmp.91 = dup %tmp.89;
+            %tmp.92 = aputv %tmp.91 1 %tmp.90;
+            ret %tmp.92;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_Instinct_app_build_folder_gen_006_B3888_00_source_Rez_mcgen_14_74_23_8_stop:
+        }
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 26; @symbol_moduledef = [Menus,26,11,16]; ]
+    module Menus {
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 26; ]
+        <init> {
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 27; @symbol_classdef = [ServoMenu,27,14,23]; @symbol_extends<0> = [WatchUi,27,32,39]; @symbol_extends<1> = [Menu2,27,40,45]; ]
+        class ServoMenu extends WatchUi.Menu2 {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 27; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 27; ]
+            static
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 28; @symbol_functiondef = [initialize,28,21,31]; ]
+            function initialize() as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_Instinct_app_build_folder_gen_006_B3888_00_source_Rez_mcgen_28_34_32_12_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 29 16 ]
+                symbol [ Menu2 %tmp.2 29 16 21 ];
+                %tmp.2 = getv ? :Menu2;
+                symbol [ initialize %tmp.3 29 22 32 ];
+                %tmp.3 = getv function %tmp.2 :initialize;
+                %tmp.4 = null;
+                invoke %tmp.2 %tmp.3(%tmp.4);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 30 16 ]
+                %tmp.5 = self;
+                symbol [ addItem %tmp.6 30 16 23 ];
+                %tmp.6 = getv function %tmp.5 :addItem;
+                symbol [ WatchUi %tmp.9 30 28 35 ];
+                %tmp.9 = getm $.Toybox.WatchUi;
+                symbol [ MenuItem %tmp.10 30 36 44 ];
+                %tmp.10 = getv function ? %tmp.9 :MenuItem;
+                %tmp.11 = "Lights ON";
+                %tmp.12 = null;
+                %tmp.14 = const :servo_on;
+                symbol [ servo_on %tmp.14 30 65 73 const ];
+                %tmp.15 = null;
+                %tmp.7 = newc %tmp.10 (%tmp.11, %tmp.12, %tmp.14, %tmp.15);
+                invoke %tmp.5 %tmp.6(%tmp.7);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 31 16 ]
+                %tmp.16 = self;
+                symbol [ addItem %tmp.17 31 16 23 ];
+                %tmp.17 = getv function %tmp.16 :addItem;
+                symbol [ WatchUi %tmp.20 31 28 35 ];
+                %tmp.20 = getm $.Toybox.WatchUi;
+                symbol [ MenuItem %tmp.21 31 36 44 ];
+                %tmp.21 = getv function ? %tmp.20 :MenuItem;
+                %tmp.22 = "Lights OFF";
+                %tmp.23 = null;
+                %tmp.25 = const :servo_off;
+                symbol [ servo_off %tmp.25 31 66 75 const ];
+                %tmp.26 = null;
+                %tmp.18 = newc %tmp.21 (%tmp.22, %tmp.23, %tmp.25, %tmp.26);
+                invoke %tmp.16 %tmp.17(%tmp.18);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_Instinct_app_build_folder_gen_006_B3888_00_source_Rez_mcgen_28_34_32_12_stop:
+            }
+        }
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 36; @symbol_moduledef = [Strings,36,11,18]; ]
+    module Strings {
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 36; ]
+        <init> {
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 37; @position = 27; initialized = true; @symbol_vardef = [menu_label_1,37,27,39]; @symbol_type<0> = [ResourceId,37,43,53]; ]
+        var menu_label_1 as ResourceId;
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 38; @position = 27; initialized = true; @symbol_vardef = [menu_label_2,38,27,39]; @symbol_type<0> = [ResourceId,38,43,53]; ]
+        var menu_label_2 as ResourceId;
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 39; @position = 27; initialized = true; @symbol_vardef = [prompt,39,27,33]; @symbol_type<0> = [ResourceId,39,37,47]; ]
+        var prompt as ResourceId;
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 40; @position = 27; initialized = true; @symbol_vardef = [AppName,40,27,34]; @symbol_type<0> = [ResourceId,40,38,48]; ]
+        var AppName as ResourceId;
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 43; @symbol_moduledef = [Styles,43,11,17]; ]
+    module Styles {
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 43; ]
+        <init> {
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 44; @symbol_moduledef = [prompt_font_enhanced_readability__body_with_title,44,15,64]; ]
+        module prompt_font_enhanced_readability__body_with_title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 44; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 45; @position = 18; @symbol_constdef = [exclude,45,18,25]; @symbol_type<0> = [Boolean,45,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 48; @symbol_moduledef = [system_size__menu_header,48,15,39]; ]
+        module system_size__menu_header {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 48; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 49; @position = 18; @symbol_constdef = [width,49,18,23]; @symbol_type<0> = [Number,49,27,33]; ]
+            const width as Number = 175;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 50; @position = 18; @symbol_constdef = [height,50,18,24]; @symbol_type<0> = [Number,50,28,34]; ]
+            const height as Number = 62;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 53; @symbol_moduledef = [system_loc__hint_button_left_bottom,53,15,50]; ]
+        module system_loc__hint_button_left_bottom {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 53; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 54; @position = 18; @symbol_constdef = [exclude,54,18,25]; @symbol_type<0> = [Boolean,54,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 57; @symbol_moduledef = [prompt_font_enhanced_readability__body_no_title,57,15,62]; ]
+        module prompt_font_enhanced_readability__body_no_title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 57; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 58; @position = 18; @symbol_constdef = [exclude,58,18,25]; @symbol_type<0> = [Boolean,58,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 61; @symbol_moduledef = [prompt_loc__body_no_title,61,15,40]; ]
+        module prompt_loc__body_no_title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 61; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 62; @position = 18; @symbol_constdef = [x,62,18,19]; @symbol_type<0> = [Number,62,23,29]; ]
+            const x as Number = 5;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 63; @position = 18; @symbol_constdef = [y,63,18,19]; @symbol_type<0> = [Number,63,23,29]; ]
+            const y as Number = 77;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 66; @symbol_moduledef = [system_icon_dark__about,66,15,38]; ]
+        module system_icon_dark__about {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 66; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 67; @position = 18; @symbol_constdef = [filename,67,18,26]; @symbol_type<0> = [String,67,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__about.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 68; @position = 18; @symbol_constdef = [disableTransparency,68,18,37]; @symbol_type<0> = [Boolean,68,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 69; @position = 18; @symbol_constdef = [dithering,69,18,27]; @symbol_type<0> = [String,69,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 70; @position = 18; @symbol_constdef = [automaticPalette,70,18,34]; @symbol_type<0> = [Boolean,70,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 73; @symbol_moduledef = [system_icon_light__question,73,15,42]; ]
+        module system_icon_light__question {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 73; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 74; @position = 18; @symbol_constdef = [filename,74,18,26]; @symbol_type<0> = [String,74,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__question.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 75; @position = 18; @symbol_constdef = [disableTransparency,75,18,37]; @symbol_type<0> = [Boolean,75,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 76; @position = 18; @symbol_constdef = [dithering,76,18,27]; @symbol_type<0> = [String,76,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 77; @position = 18; @symbol_constdef = [automaticPalette,77,18,34]; @symbol_type<0> = [Boolean,77,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 80; @symbol_moduledef = [system_loc__hint_button_left_top,80,15,47]; ]
+        module system_loc__hint_button_left_top {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 80; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 81; @position = 18; @symbol_constdef = [exclude,81,18,25]; @symbol_type<0> = [Boolean,81,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 84; @symbol_moduledef = [prompt_font__title,84,15,33]; ]
+        module prompt_font__title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 84; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 85 18 ]
+                symbol [ Graphics %tmp.27 85 34 42 ];
+                %tmp.27 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_RIGHT %tmp.28 85 43 61 ];
+                %tmp.28 = getv %tmp.27 :TEXT_JUSTIFY_RIGHT;
+                symbol [ Graphics %tmp.29 85 62 70 ];
+                %tmp.29 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.30 85 71 91 ];
+                %tmp.30 = getv %tmp.29 :TEXT_JUSTIFY_VCENTER;
+                %tmp.31 = bitor %tmp.28 %tmp.30;
+                putv self :justification %tmp.31;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 86 18 ]
+                symbol [ Graphics %tmp.32 86 25 33 ];
+                %tmp.32 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.33 86 34 43 ];
+                %tmp.33 = getv %tmp.32 :FONT_TINY;
+                putv self :font %tmp.33;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 85; @position = 18; @symbol_constdef = [justification,85,18,31]; ]
+            const justification;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 86; @position = 18; @symbol_constdef = [font,86,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 89; @symbol_moduledef = [system_icon_dark__discard,89,15,40]; ]
+        module system_icon_dark__discard {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 89; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 90; @position = 18; @symbol_constdef = [filename,90,18,26]; @symbol_type<0> = [String,90,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__discard.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 91; @position = 18; @symbol_constdef = [disableTransparency,91,18,37]; @symbol_type<0> = [Boolean,91,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 92; @position = 18; @symbol_constdef = [dithering,92,18,27]; @symbol_type<0> = [String,92,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 93; @position = 18; @symbol_constdef = [automaticPalette,93,18,34]; @symbol_type<0> = [Boolean,93,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 96; @symbol_moduledef = [system_size__menu_item,96,15,37]; ]
+        module system_size__menu_item {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 96; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 97; @position = 18; @symbol_constdef = [width,97,18,23]; @symbol_type<0> = [Number,97,27,33]; ]
+            const width as Number = 175;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 98; @position = 18; @symbol_constdef = [height,98,18,24]; @symbol_type<0> = [Number,98,28,34]; ]
+            const height as Number = 58;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 101; @symbol_moduledef = [system_color_dark__text,101,15,38]; ]
+        module system_color_dark__text {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 101; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 103 18 ]
+                symbol [ Graphics %tmp.34 103 31 39 ];
+                %tmp.34 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.35 103 40 57 ];
+                %tmp.35 = getv %tmp.34 :COLOR_TRANSPARENT;
+                putv self :background %tmp.35;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 102; @position = 18; @symbol_constdef = [color,102,18,23]; @symbol_type<0> = [Number,102,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 103; @position = 18; @symbol_constdef = [background,103,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 106; @symbol_moduledef = [system_icon_destructive__discard,106,15,47]; ]
+        module system_icon_destructive__discard {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 106; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 107; @position = 18; @symbol_constdef = [filename,107,18,26]; @symbol_type<0> = [String,107,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__discard.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 108; @position = 18; @symbol_constdef = [disableTransparency,108,18,37]; @symbol_type<0> = [Boolean,108,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 109; @position = 18; @symbol_constdef = [dithering,109,18,27]; @symbol_type<0> = [String,109,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 110; @position = 18; @symbol_constdef = [automaticPalette,110,18,34]; @symbol_type<0> = [Boolean,110,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 113; @symbol_moduledef = [system_icon_dark__hint_action_menu,113,15,49]; ]
+        module system_icon_dark__hint_action_menu {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 113; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 114; @position = 18; @symbol_constdef = [filename,114,18,26]; @symbol_type<0> = [String,114,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 115; @position = 18; @symbol_constdef = [disableTransparency,115,18,37]; @symbol_type<0> = [Boolean,115,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 116; @position = 18; @symbol_constdef = [dithering,116,18,27]; @symbol_type<0> = [String,116,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 117; @position = 18; @symbol_constdef = [automaticPalette,117,18,34]; @symbol_type<0> = [Boolean,117,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 120; @symbol_moduledef = [prompt_size__title,120,15,33]; ]
+        module prompt_size__title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 120; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 121; @position = 18; @symbol_constdef = [width,121,18,23]; @symbol_type<0> = [Number,121,27,33]; ]
+            const width as Number = 67;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 122; @position = 18; @symbol_constdef = [height,122,18,24]; @symbol_type<0> = [Number,122,28,34]; ]
+            const height as Number = 60;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 125; @symbol_moduledef = [confirmation_font__body,125,15,38]; ]
+        module confirmation_font__body {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 125; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 126 18 ]
+                symbol [ Graphics %tmp.36 126 34 42 ];
+                %tmp.36 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.37 126 43 62 ];
+                %tmp.37 = getv %tmp.36 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.37;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 127 18 ]
+                symbol [ Graphics %tmp.38 127 25 33 ];
+                %tmp.38 = getm $.Toybox.Graphics;
+                symbol [ FONT_XTINY %tmp.39 127 34 44 ];
+                %tmp.39 = getv %tmp.38 :FONT_XTINY;
+                putv self :font %tmp.39;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 126; @position = 18; @symbol_constdef = [justification,126,18,31]; ]
+            const justification;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 127; @position = 18; @symbol_constdef = [font,127,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 130; @symbol_moduledef = [system_color_dark__background,130,15,44]; ]
+        module system_color_dark__background {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 130; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 131; @position = 18; @symbol_constdef = [color,131,18,23]; @symbol_type<0> = [Number,131,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 132; @position = 18; @symbol_constdef = [background,132,18,28]; @symbol_type<0> = [Number,132,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 135; @symbol_moduledef = [system_icon_destructive__hint_button_left_top,135,15,60]; ]
+        module system_icon_destructive__hint_button_left_top {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 135; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 136; @position = 18; @symbol_constdef = [exclude,136,18,25]; @symbol_type<0> = [Boolean,136,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 139; @symbol_moduledef = [system_size__launch_icon,139,15,39]; ]
+        module system_size__launch_icon {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 139; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 140; @position = 18; @symbol_constdef = [scaleX,140,18,24]; @symbol_type<0> = [Number,140,28,34]; ]
+            const scaleX as Number = 62;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 141; @position = 18; @symbol_constdef = [scaleY,141,18,24]; @symbol_type<0> = [Number,141,28,34]; ]
+            const scaleY as Number = 62;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 142; @position = 18; @symbol_constdef = [scaleRelativeTo,142,18,33]; @symbol_type<0> = [String,142,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 145; @symbol_moduledef = [confirmation_input__confirm,145,15,42]; ]
+        module confirmation_input__confirm {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 145; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 146 18 ]
+                symbol [ WatchUi %tmp.40 146 27 34 ];
+                %tmp.40 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.41 146 35 44 ];
+                %tmp.41 = getv %tmp.40 :KEY_ENTER;
+                putv self :button %tmp.41;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 146; @position = 18; @symbol_constdef = [button,146,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 149; @symbol_moduledef = [prompt_font__body_with_title,149,15,43]; ]
+        module prompt_font__body_with_title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 149; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 150 18 ]
+                symbol [ Graphics %tmp.42 150 34 42 ];
+                %tmp.42 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.43 150 43 62 ];
+                %tmp.43 = getv %tmp.42 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.43;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 151 18 ]
+                symbol [ Graphics %tmp.44 151 25 33 ];
+                %tmp.44 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.45 151 34 43 ];
+                %tmp.45 = getv %tmp.44 :FONT_TINY;
+                putv self :font %tmp.45;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 150; @position = 18; @symbol_constdef = [justification,150,18,31]; ]
+            const justification;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 151; @position = 18; @symbol_constdef = [font,151,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 154; @symbol_moduledef = [confirmation_loc__body,154,15,37]; ]
+        module confirmation_loc__body {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 154; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 155; @position = 18; @symbol_constdef = [x,155,18,19]; @symbol_type<0> = [Number,155,23,29]; ]
+            const x as Number = 2;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 156; @position = 18; @symbol_constdef = [y,156,18,19]; @symbol_type<0> = [Number,156,23,29]; ]
+            const y as Number = 81;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 159; @symbol_moduledef = [system_icon_destructive__hint_button_left_bottom,159,15,63]; ]
+        module system_icon_destructive__hint_button_left_bottom {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 159; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 160; @position = 18; @symbol_constdef = [exclude,160,18,25]; @symbol_type<0> = [Boolean,160,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 163; @symbol_moduledef = [prompt_color_dark__background,163,15,44]; ]
+        module prompt_color_dark__background {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 163; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 164; @position = 18; @symbol_constdef = [background,164,18,28]; @symbol_type<0> = [Number,164,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 167; @symbol_moduledef = [system_icon_destructive__hint_action_menu,167,15,56]; ]
+        module system_icon_destructive__hint_action_menu {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 167; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 168; @position = 18; @symbol_constdef = [filename,168,18,26]; @symbol_type<0> = [String,168,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_destructive__hint_button_right_top.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 169; @position = 18; @symbol_constdef = [disableTransparency,169,18,37]; @symbol_type<0> = [Boolean,169,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 170; @position = 18; @symbol_constdef = [dithering,170,18,27]; @symbol_type<0> = [String,170,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 171; @position = 18; @symbol_constdef = [automaticPalette,171,18,34]; @symbol_type<0> = [Boolean,171,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 174; @symbol_moduledef = [system_loc__hint_action_menu,174,15,43]; ]
+        module system_loc__hint_action_menu {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 174; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 175; @position = 18; @symbol_constdef = [x,175,18,19]; @symbol_type<0> = [Number,175,23,29]; ]
+            const x as Number = 166;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 176; @position = 18; @symbol_constdef = [y,176,18,19]; @symbol_type<0> = [Number,176,23,29]; ]
+            const y as Number = 31;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 177; @position = 18; @symbol_constdef = [horizontalJustification,177,18,41]; @symbol_type<0> = [String,177,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 178; @position = 18; @symbol_constdef = [verticalJustification,178,18,39]; @symbol_type<0> = [String,178,43,49]; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 181; @symbol_moduledef = [confirmation_icon__hint_confirm,181,15,46]; ]
+        module confirmation_icon__hint_confirm {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 181; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 182; @position = 18; @symbol_constdef = [filename,182,18,26]; @symbol_type<0> = [String,182,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 183; @position = 18; @symbol_constdef = [disableTransparency,183,18,37]; @symbol_type<0> = [Boolean,183,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 184; @position = 18; @symbol_constdef = [dithering,184,18,27]; @symbol_type<0> = [String,184,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 185; @position = 18; @symbol_constdef = [automaticPalette,185,18,34]; @symbol_type<0> = [Boolean,185,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 188; @symbol_moduledef = [system_loc__hint_button_left_middle,188,15,50]; ]
+        module system_loc__hint_button_left_middle {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 188; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 189; @position = 18; @symbol_constdef = [exclude,189,18,25]; @symbol_type<0> = [Boolean,189,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 192; @symbol_moduledef = [prompt_size__body_no_title,192,15,41]; ]
+        module prompt_size__body_no_title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 192; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 193; @position = 18; @symbol_constdef = [width,193,18,23]; @symbol_type<0> = [Number,193,27,33]; ]
+            const width as Number = 166;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 194; @position = 18; @symbol_constdef = [height,194,18,24]; @symbol_type<0> = [Number,194,28,34]; ]
+            const height as Number = 99;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 197; @symbol_moduledef = [system_icon_light__hint_button_left_top,197,15,54]; ]
+        module system_icon_light__hint_button_left_top {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 197; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 198; @position = 18; @symbol_constdef = [exclude,198,18,25]; @symbol_type<0> = [Boolean,198,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 201; @symbol_moduledef = [prompt_color_light__background,201,15,45]; ]
+        module prompt_color_light__background {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 201; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 202; @position = 18; @symbol_constdef = [background,202,18,28]; @symbol_type<0> = [Number,202,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 205; @symbol_moduledef = [confirmation_input__delete,205,15,41]; ]
+        module confirmation_input__delete {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 205; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 206 18 ]
+                symbol [ WatchUi %tmp.46 206 27 34 ];
+                %tmp.46 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.47 206 35 44 ];
+                %tmp.47 = getv %tmp.46 :KEY_ENTER;
+                putv self :button %tmp.47;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 206; @position = 18; @symbol_constdef = [button,206,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 209; @symbol_moduledef = [system_icon_dark__hint_button_left_top,209,15,53]; ]
+        module system_icon_dark__hint_button_left_top {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 209; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 210; @position = 18; @symbol_constdef = [exclude,210,18,25]; @symbol_type<0> = [Boolean,210,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 213; @symbol_moduledef = [system_input__action_menu,213,15,40]; ]
+        module system_input__action_menu {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 213; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 214 18 ]
+                symbol [ WatchUi %tmp.48 214 27 34 ];
+                %tmp.48 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.49 214 35 44 ];
+                %tmp.49 = getv %tmp.48 :KEY_ENTER;
+                putv self :button %tmp.49;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 214; @position = 18; @symbol_constdef = [button,214,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 217; @symbol_moduledef = [system_icon_light__save,217,15,38]; ]
+        module system_icon_light__save {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 217; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 218; @position = 18; @symbol_constdef = [filename,218,18,26]; @symbol_type<0> = [String,218,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__save.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 219; @position = 18; @symbol_constdef = [disableTransparency,219,18,37]; @symbol_type<0> = [Boolean,219,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 220; @position = 18; @symbol_constdef = [dithering,220,18,27]; @symbol_type<0> = [String,220,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 221; @position = 18; @symbol_constdef = [automaticPalette,221,18,34]; @symbol_type<0> = [Boolean,221,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 224; @symbol_moduledef = [prompt_color_light__body,224,15,39]; ]
+        module prompt_color_light__body {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 224; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 226 18 ]
+                symbol [ Graphics %tmp.50 226 31 39 ];
+                %tmp.50 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.51 226 40 57 ];
+                %tmp.51 = getv %tmp.50 :COLOR_TRANSPARENT;
+                putv self :background %tmp.51;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 225; @position = 18; @symbol_constdef = [color,225,18,23]; @symbol_type<0> = [Number,225,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 226; @position = 18; @symbol_constdef = [background,226,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 229; @symbol_moduledef = [system_loc__subwindow,229,15,36]; ]
+        module system_loc__subwindow {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 229; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 230; @position = 18; @symbol_constdef = [x,230,18,19]; @symbol_type<0> = [Number,230,23,29]; ]
+            const x as Number = 114;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 231; @position = 18; @symbol_constdef = [y,231,18,19]; @symbol_type<0> = [Number,231,23,29]; ]
+            const y as Number = 0;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 234; @symbol_moduledef = [system_icon_light__warning,234,15,41]; ]
+        module system_icon_light__warning {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 234; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 235; @position = 18; @symbol_constdef = [filename,235,18,26]; @symbol_type<0> = [String,235,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__warning.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 236; @position = 18; @symbol_constdef = [disableTransparency,236,18,37]; @symbol_type<0> = [Boolean,236,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 237; @position = 18; @symbol_constdef = [dithering,237,18,27]; @symbol_type<0> = [String,237,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 238; @position = 18; @symbol_constdef = [automaticPalette,238,18,34]; @symbol_type<0> = [Boolean,238,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 241; @symbol_moduledef = [confirmation_color_light__body,241,15,45]; ]
+        module confirmation_color_light__body {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 241; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 243 18 ]
+                symbol [ Graphics %tmp.52 243 31 39 ];
+                %tmp.52 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.53 243 40 57 ];
+                %tmp.53 = getv %tmp.52 :COLOR_TRANSPARENT;
+                putv self :background %tmp.53;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 242; @position = 18; @symbol_constdef = [color,242,18,23]; @symbol_type<0> = [Number,242,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 243; @position = 18; @symbol_constdef = [background,243,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 246; @symbol_moduledef = [confirmation_icon_light__hint_keep,246,15,49]; ]
+        module confirmation_icon_light__hint_keep {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 246; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 247; @position = 18; @symbol_constdef = [filename,247,18,26]; @symbol_type<0> = [String,247,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 248; @position = 18; @symbol_constdef = [disableTransparency,248,18,37]; @symbol_type<0> = [Boolean,248,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 249; @position = 18; @symbol_constdef = [dithering,249,18,27]; @symbol_type<0> = [String,249,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 250; @position = 18; @symbol_constdef = [automaticPalette,250,18,34]; @symbol_type<0> = [Boolean,250,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 253; @symbol_moduledef = [activity_color_light__background,253,15,47]; ]
+        module activity_color_light__background {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 253; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 254; @position = 18; @symbol_constdef = [color,254,18,23]; @symbol_type<0> = [Number,254,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 255; @position = 18; @symbol_constdef = [background,255,18,28]; @symbol_type<0> = [Number,255,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 258; @symbol_moduledef = [system_icon_positive__hint_button_right_top,258,15,58]; ]
+        module system_icon_positive__hint_button_right_top {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 258; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 259; @position = 18; @symbol_constdef = [filename,259,18,26]; @symbol_type<0> = [String,259,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_positive__hint_button_right_top.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 260; @position = 18; @symbol_constdef = [disableTransparency,260,18,37]; @symbol_type<0> = [Boolean,260,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 261; @position = 18; @symbol_constdef = [dithering,261,18,27]; @symbol_type<0> = [String,261,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 262; @position = 18; @symbol_constdef = [automaticPalette,262,18,34]; @symbol_type<0> = [Boolean,262,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 265; @symbol_moduledef = [system_size__screen,265,15,34]; ]
+        module system_size__screen {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 265; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 266; @position = 18; @symbol_constdef = [width,266,18,23]; @symbol_type<0> = [Number,266,27,33]; ]
+            const width as Number = 176;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 267; @position = 18; @symbol_constdef = [height,267,18,24]; @symbol_type<0> = [Number,267,28,34]; ]
+            const height as Number = 176;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 270; @symbol_moduledef = [system_icon_destructive__hint_button_right_bottom,270,15,64]; ]
+        module system_icon_destructive__hint_button_right_bottom {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 270; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 271; @position = 18; @symbol_constdef = [exclude,271,18,25]; @symbol_type<0> = [Boolean,271,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 274; @symbol_moduledef = [system_color_light__background,274,15,45]; ]
+        module system_color_light__background {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 274; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 275; @position = 18; @symbol_constdef = [color,275,18,23]; @symbol_type<0> = [Number,275,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 276; @position = 18; @symbol_constdef = [background,276,18,28]; @symbol_type<0> = [Number,276,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 279; @symbol_moduledef = [system_icon_destructive__hint_button_right_top,279,15,61]; ]
+        module system_icon_destructive__hint_button_right_top {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 279; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 280; @position = 18; @symbol_constdef = [filename,280,18,26]; @symbol_type<0> = [String,280,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_destructive__hint_button_right_top.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 281; @position = 18; @symbol_constdef = [disableTransparency,281,18,37]; @symbol_type<0> = [Boolean,281,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 282; @position = 18; @symbol_constdef = [dithering,282,18,27]; @symbol_type<0> = [String,282,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 283; @position = 18; @symbol_constdef = [automaticPalette,283,18,34]; @symbol_type<0> = [Boolean,283,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 286; @symbol_moduledef = [confirmation_loc__hint_confirm,286,15,45]; ]
+        module confirmation_loc__hint_confirm {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 286; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 287; @position = 18; @symbol_constdef = [x,287,18,19]; @symbol_type<0> = [Number,287,23,29]; ]
+            const x as Number = 113;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 288; @position = 18; @symbol_constdef = [y,288,18,19]; @symbol_type<0> = [Number,288,23,29]; ]
+            const y as Number = 1;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 291; @symbol_moduledef = [activity_color_dark__text,291,15,40]; ]
+        module activity_color_dark__text {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 291; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 293 18 ]
+                symbol [ Graphics %tmp.54 293 31 39 ];
+                %tmp.54 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.55 293 40 57 ];
+                %tmp.55 = getv %tmp.54 :COLOR_TRANSPARENT;
+                putv self :background %tmp.55;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 292; @position = 18; @symbol_constdef = [color,292,18,23]; @symbol_type<0> = [Number,292,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 293; @position = 18; @symbol_constdef = [background,293,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 296; @symbol_moduledef = [confirmation_input__keep,296,15,39]; ]
+        module confirmation_input__keep {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 296; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 297 18 ]
+                symbol [ WatchUi %tmp.56 297 27 34 ];
+                %tmp.56 = getm $.Toybox.WatchUi;
+                symbol [ KEY_DOWN %tmp.57 297 35 43 ];
+                %tmp.57 = getv %tmp.56 :KEY_DOWN;
+                putv self :button %tmp.57;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 297; @position = 18; @symbol_constdef = [button,297,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 300; @symbol_moduledef = [prompt_loc__body_with_title,300,15,42]; ]
+        module prompt_loc__body_with_title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 300; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 301; @position = 18; @symbol_constdef = [x,301,18,19]; @symbol_type<0> = [Number,301,23,29]; ]
+            const x as Number = 5;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 302; @position = 18; @symbol_constdef = [y,302,18,19]; @symbol_type<0> = [Number,302,23,29]; ]
+            const y as Number = 77;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 305; @symbol_moduledef = [system_icon_dark__search,305,15,39]; ]
+        module system_icon_dark__search {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 305; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 306; @position = 18; @symbol_constdef = [filename,306,18,26]; @symbol_type<0> = [String,306,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__search.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 307; @position = 18; @symbol_constdef = [disableTransparency,307,18,37]; @symbol_type<0> = [Boolean,307,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 308; @position = 18; @symbol_constdef = [dithering,308,18,27]; @symbol_type<0> = [String,308,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 309; @position = 18; @symbol_constdef = [automaticPalette,309,18,34]; @symbol_type<0> = [Boolean,309,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 312; @symbol_moduledef = [activity_color_light__text,312,15,41]; ]
+        module activity_color_light__text {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 312; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 314 18 ]
+                symbol [ Graphics %tmp.58 314 31 39 ];
+                %tmp.58 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.59 314 40 57 ];
+                %tmp.59 = getv %tmp.58 :COLOR_TRANSPARENT;
+                putv self :background %tmp.59;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 313; @position = 18; @symbol_constdef = [color,313,18,23]; @symbol_type<0> = [Number,313,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 314; @position = 18; @symbol_constdef = [background,314,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 317; @symbol_moduledef = [confirmation_icon__hint_keep,317,15,43]; ]
+        module confirmation_icon__hint_keep {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 317; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 318; @position = 18; @symbol_constdef = [filename,318,18,26]; @symbol_type<0> = [String,318,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 319; @position = 18; @symbol_constdef = [disableTransparency,319,18,37]; @symbol_type<0> = [Boolean,319,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 320; @position = 18; @symbol_constdef = [dithering,320,18,27]; @symbol_type<0> = [String,320,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 321; @position = 18; @symbol_constdef = [automaticPalette,321,18,34]; @symbol_type<0> = [Boolean,321,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 324; @symbol_moduledef = [system_icon_dark__save,324,15,37]; ]
+        module system_icon_dark__save {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 324; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 325; @position = 18; @symbol_constdef = [filename,325,18,26]; @symbol_type<0> = [String,325,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__save.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 326; @position = 18; @symbol_constdef = [disableTransparency,326,18,37]; @symbol_type<0> = [Boolean,326,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 327; @position = 18; @symbol_constdef = [dithering,327,18,27]; @symbol_type<0> = [String,327,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 328; @position = 18; @symbol_constdef = [automaticPalette,328,18,34]; @symbol_type<0> = [Boolean,328,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 331; @symbol_moduledef = [system_icon_destructive__hint_button_left_middle,331,15,63]; ]
+        module system_icon_destructive__hint_button_left_middle {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 331; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 332; @position = 18; @symbol_constdef = [exclude,332,18,25]; @symbol_type<0> = [Boolean,332,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 335; @symbol_moduledef = [system_icon_light__search,335,15,40]; ]
+        module system_icon_light__search {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 335; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 336; @position = 18; @symbol_constdef = [filename,336,18,26]; @symbol_type<0> = [String,336,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__search.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 337; @position = 18; @symbol_constdef = [disableTransparency,337,18,37]; @symbol_type<0> = [Boolean,337,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 338; @position = 18; @symbol_constdef = [dithering,338,18,27]; @symbol_type<0> = [String,338,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 339; @position = 18; @symbol_constdef = [automaticPalette,339,18,34]; @symbol_type<0> = [Boolean,339,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 342; @symbol_moduledef = [system_icon_dark__hint_button_left_bottom,342,15,56]; ]
+        module system_icon_dark__hint_button_left_bottom {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 342; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 343; @position = 18; @symbol_constdef = [exclude,343,18,25]; @symbol_type<0> = [Boolean,343,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 346; @symbol_moduledef = [system_icon_positive__hint_button_left_top,346,15,57]; ]
+        module system_icon_positive__hint_button_left_top {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 346; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 347; @position = 18; @symbol_constdef = [exclude,347,18,25]; @symbol_type<0> = [Boolean,347,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 350; @symbol_moduledef = [system_loc__hint_button_right_bottom,350,15,51]; ]
+        module system_loc__hint_button_right_bottom {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 350; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 351; @position = 18; @symbol_constdef = [exclude,351,18,25]; @symbol_type<0> = [Boolean,351,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 354; @symbol_moduledef = [confirmation_icon_dark__hint_reject,354,15,50]; ]
+        module confirmation_icon_dark__hint_reject {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 354; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 355; @position = 18; @symbol_constdef = [filename,355,18,26]; @symbol_type<0> = [String,355,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 356; @position = 18; @symbol_constdef = [disableTransparency,356,18,37]; @symbol_type<0> = [Boolean,356,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 357; @position = 18; @symbol_constdef = [dithering,357,18,27]; @symbol_type<0> = [String,357,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 358; @position = 18; @symbol_constdef = [automaticPalette,358,18,34]; @symbol_type<0> = [Boolean,358,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 361; @symbol_moduledef = [confirmation_color_dark__body,361,15,44]; ]
+        module confirmation_color_dark__body {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 361; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 363 18 ]
+                symbol [ Graphics %tmp.60 363 31 39 ];
+                %tmp.60 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.61 363 40 57 ];
+                %tmp.61 = getv %tmp.60 :COLOR_TRANSPARENT;
+                putv self :background %tmp.61;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 362; @position = 18; @symbol_constdef = [color,362,18,23]; @symbol_type<0> = [Number,362,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 363; @position = 18; @symbol_constdef = [background,363,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 366; @symbol_moduledef = [confirmation_icon_light__hint_confirm,366,15,52]; ]
+        module confirmation_icon_light__hint_confirm {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 366; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 367; @position = 18; @symbol_constdef = [filename,367,18,26]; @symbol_type<0> = [String,367,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 368; @position = 18; @symbol_constdef = [disableTransparency,368,18,37]; @symbol_type<0> = [Boolean,368,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 369; @position = 18; @symbol_constdef = [dithering,369,18,27]; @symbol_type<0> = [String,369,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 370; @position = 18; @symbol_constdef = [automaticPalette,370,18,34]; @symbol_type<0> = [Boolean,370,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 373; @symbol_moduledef = [prompt_color_dark__title,373,15,39]; ]
+        module prompt_color_dark__title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 373; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 375 18 ]
+                symbol [ Graphics %tmp.62 375 31 39 ];
+                %tmp.62 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.63 375 40 57 ];
+                %tmp.63 = getv %tmp.62 :COLOR_TRANSPARENT;
+                putv self :background %tmp.63;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 374; @position = 18; @symbol_constdef = [color,374,18,23]; @symbol_type<0> = [Number,374,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 375; @position = 18; @symbol_constdef = [background,375,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 378; @symbol_moduledef = [system_icon_destructive__cancel,378,15,46]; ]
+        module system_icon_destructive__cancel {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 378; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 379; @position = 18; @symbol_constdef = [filename,379,18,26]; @symbol_type<0> = [String,379,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__cancel.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 380; @position = 18; @symbol_constdef = [disableTransparency,380,18,37]; @symbol_type<0> = [Boolean,380,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 381; @position = 18; @symbol_constdef = [dithering,381,18,27]; @symbol_type<0> = [String,381,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 382; @position = 18; @symbol_constdef = [automaticPalette,382,18,34]; @symbol_type<0> = [Boolean,382,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 385; @symbol_moduledef = [system_icon_light__hint_button_right_bottom,385,15,58]; ]
+        module system_icon_light__hint_button_right_bottom {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 385; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 386; @position = 18; @symbol_constdef = [exclude,386,18,25]; @symbol_type<0> = [Boolean,386,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 389; @symbol_moduledef = [prompt_loc__title,389,15,32]; ]
+        module prompt_loc__title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 389; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 390; @position = 18; @symbol_constdef = [x,390,18,19]; @symbol_type<0> = [Number,390,23,29]; ]
+            const x as Number = 25;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 391; @position = 18; @symbol_constdef = [y,391,18,19]; @symbol_type<0> = [Number,391,23,29]; ]
+            const y as Number = 9;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 394; @symbol_moduledef = [confirmation_font_enhanced_readability__body,394,15,59]; ]
+        module confirmation_font_enhanced_readability__body {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 394; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 395; @position = 18; @symbol_constdef = [exclude,395,18,25]; @symbol_type<0> = [Boolean,395,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 398; @symbol_moduledef = [prompt_color_light__title,398,15,40]; ]
+        module prompt_color_light__title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 398; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 400 18 ]
+                symbol [ Graphics %tmp.64 400 31 39 ];
+                %tmp.64 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.65 400 40 57 ];
+                %tmp.65 = getv %tmp.64 :COLOR_TRANSPARENT;
+                putv self :background %tmp.65;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 399; @position = 18; @symbol_constdef = [color,399,18,23]; @symbol_type<0> = [Number,399,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 400; @position = 18; @symbol_constdef = [background,400,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 403; @symbol_moduledef = [system_icon_dark__hint_button_right_top,403,15,54]; ]
+        module system_icon_dark__hint_button_right_top {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 403; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 404; @position = 18; @symbol_constdef = [filename,404,18,26]; @symbol_type<0> = [String,404,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 405; @position = 18; @symbol_constdef = [disableTransparency,405,18,37]; @symbol_type<0> = [Boolean,405,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 406; @position = 18; @symbol_constdef = [dithering,406,18,27]; @symbol_type<0> = [String,406,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 407; @position = 18; @symbol_constdef = [automaticPalette,407,18,34]; @symbol_type<0> = [Boolean,407,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 410; @symbol_moduledef = [system_icon_dark__hint_button_left_middle,410,15,56]; ]
+        module system_icon_dark__hint_button_left_middle {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 410; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 411; @position = 18; @symbol_constdef = [exclude,411,18,25]; @symbol_type<0> = [Boolean,411,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 414; @symbol_moduledef = [confirmation_icon_dark__hint_keep,414,15,48]; ]
+        module confirmation_icon_dark__hint_keep {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 414; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 415; @position = 18; @symbol_constdef = [filename,415,18,26]; @symbol_type<0> = [String,415,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 416; @position = 18; @symbol_constdef = [disableTransparency,416,18,37]; @symbol_type<0> = [Boolean,416,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 417; @position = 18; @symbol_constdef = [dithering,417,18,27]; @symbol_type<0> = [String,417,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 418; @position = 18; @symbol_constdef = [automaticPalette,418,18,34]; @symbol_type<0> = [Boolean,418,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 421; @symbol_moduledef = [system_icon_light__cancel,421,15,40]; ]
+        module system_icon_light__cancel {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 421; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 422; @position = 18; @symbol_constdef = [filename,422,18,26]; @symbol_type<0> = [String,422,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__cancel.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 423; @position = 18; @symbol_constdef = [disableTransparency,423,18,37]; @symbol_type<0> = [Boolean,423,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 424; @position = 18; @symbol_constdef = [dithering,424,18,27]; @symbol_type<0> = [String,424,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 425; @position = 18; @symbol_constdef = [automaticPalette,425,18,34]; @symbol_type<0> = [Boolean,425,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 428; @symbol_moduledef = [confirmation_icon_light__hint_reject,428,15,51]; ]
+        module confirmation_icon_light__hint_reject {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 428; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 429; @position = 18; @symbol_constdef = [filename,429,18,26]; @symbol_type<0> = [String,429,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 430; @position = 18; @symbol_constdef = [disableTransparency,430,18,37]; @symbol_type<0> = [Boolean,430,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 431; @position = 18; @symbol_constdef = [dithering,431,18,27]; @symbol_type<0> = [String,431,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 432; @position = 18; @symbol_constdef = [automaticPalette,432,18,34]; @symbol_type<0> = [Boolean,432,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 435; @symbol_moduledef = [system_icon_light__about,435,15,39]; ]
+        module system_icon_light__about {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 435; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 436; @position = 18; @symbol_constdef = [filename,436,18,26]; @symbol_type<0> = [String,436,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__about.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 437; @position = 18; @symbol_constdef = [disableTransparency,437,18,37]; @symbol_type<0> = [Boolean,437,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 438; @position = 18; @symbol_constdef = [dithering,438,18,27]; @symbol_type<0> = [String,438,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 439; @position = 18; @symbol_constdef = [automaticPalette,439,18,34]; @symbol_type<0> = [Boolean,439,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 442; @symbol_moduledef = [system_size__toast_icon,442,15,38]; ]
+        module system_size__toast_icon {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 442; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 443; @position = 18; @symbol_constdef = [width,443,18,23]; @symbol_type<0> = [Number,443,27,33]; ]
+            const width as Number = 40;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 444; @position = 18; @symbol_constdef = [scaleRelativeTo,444,18,33]; @symbol_type<0> = [String,444,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 447; @symbol_moduledef = [system_icon_dark__hint_button_right_middle,447,15,57]; ]
+        module system_icon_dark__hint_button_right_middle {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 447; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 448; @position = 18; @symbol_constdef = [exclude,448,18,25]; @symbol_type<0> = [Boolean,448,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 451; @symbol_moduledef = [confirmation_icon__hint_reject,451,15,45]; ]
+        module confirmation_icon__hint_reject {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 451; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 452; @position = 18; @symbol_constdef = [filename,452,18,26]; @symbol_type<0> = [String,452,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 453; @position = 18; @symbol_constdef = [disableTransparency,453,18,37]; @symbol_type<0> = [Boolean,453,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 454; @position = 18; @symbol_constdef = [dithering,454,18,27]; @symbol_type<0> = [String,454,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 455; @position = 18; @symbol_constdef = [automaticPalette,455,18,34]; @symbol_type<0> = [Boolean,455,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 458; @symbol_moduledef = [system_icon_light__hint_action_menu,458,15,50]; ]
+        module system_icon_light__hint_action_menu {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 458; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 459; @position = 18; @symbol_constdef = [filename,459,18,26]; @symbol_type<0> = [String,459,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 460; @position = 18; @symbol_constdef = [disableTransparency,460,18,37]; @symbol_type<0> = [Boolean,460,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 461; @position = 18; @symbol_constdef = [dithering,461,18,27]; @symbol_type<0> = [String,461,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 462; @position = 18; @symbol_constdef = [automaticPalette,462,18,34]; @symbol_type<0> = [Boolean,462,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 465; @symbol_moduledef = [system_icon_light__hint_button_right_middle,465,15,58]; ]
+        module system_icon_light__hint_button_right_middle {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 465; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 466; @position = 18; @symbol_constdef = [exclude,466,18,25]; @symbol_type<0> = [Boolean,466,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 469; @symbol_moduledef = [system_icon_destructive__hint_button_right_middle,469,15,64]; ]
+        module system_icon_destructive__hint_button_right_middle {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 469; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 470; @position = 18; @symbol_constdef = [exclude,470,18,25]; @symbol_type<0> = [Boolean,470,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 473; @symbol_moduledef = [confirmation_loc__hint_reject,473,15,44]; ]
+        module confirmation_loc__hint_reject {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 473; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 474; @position = 18; @symbol_constdef = [x,474,18,19]; @symbol_type<0> = [Number,474,23,29]; ]
+            const x as Number = 0;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 475; @position = 18; @symbol_constdef = [y,475,18,19]; @symbol_type<0> = [Number,475,23,29]; ]
+            const y as Number = 138;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 478; @symbol_moduledef = [confirmation_icon_dark__hint_delete,478,15,50]; ]
+        module confirmation_icon_dark__hint_delete {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 478; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 479; @position = 18; @symbol_constdef = [filename,479,18,26]; @symbol_type<0> = [String,479,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 480; @position = 18; @symbol_constdef = [disableTransparency,480,18,37]; @symbol_type<0> = [Boolean,480,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 481; @position = 18; @symbol_constdef = [dithering,481,18,27]; @symbol_type<0> = [String,481,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 482; @position = 18; @symbol_constdef = [automaticPalette,482,18,34]; @symbol_type<0> = [Boolean,482,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 485; @symbol_moduledef = [activity_color_dark__background,485,15,46]; ]
+        module activity_color_dark__background {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 485; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 486; @position = 18; @symbol_constdef = [color,486,18,23]; @symbol_type<0> = [Number,486,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 487; @position = 18; @symbol_constdef = [background,487,18,28]; @symbol_type<0> = [Number,487,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 490; @symbol_moduledef = [system_icon_light__hint_button_left_bottom,490,15,57]; ]
+        module system_icon_light__hint_button_left_bottom {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 490; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 491; @position = 18; @symbol_constdef = [exclude,491,18,25]; @symbol_type<0> = [Boolean,491,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 494; @symbol_moduledef = [system_icon_positive__hint_button_left_middle,494,15,60]; ]
+        module system_icon_positive__hint_button_left_middle {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 494; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 495; @position = 18; @symbol_constdef = [exclude,495,18,25]; @symbol_type<0> = [Boolean,495,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 498; @symbol_moduledef = [system_size__menu_icon,498,15,37]; ]
+        module system_size__menu_icon {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 498; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 499; @position = 18; @symbol_constdef = [scaleX,499,18,24]; @symbol_type<0> = [Number,499,28,34]; ]
+            const scaleX as Number = 38;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 500; @position = 18; @symbol_constdef = [scaleY,500,18,24]; @symbol_type<0> = [Number,500,28,34]; ]
+            const scaleY as Number = 38;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 501; @position = 18; @symbol_constdef = [scaleRelativeTo,501,18,33]; @symbol_type<0> = [String,501,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 504; @symbol_moduledef = [system_icon_destructive__warning,504,15,47]; ]
+        module system_icon_destructive__warning {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 504; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 505; @position = 18; @symbol_constdef = [filename,505,18,26]; @symbol_type<0> = [String,505,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__warning.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 506; @position = 18; @symbol_constdef = [disableTransparency,506,18,37]; @symbol_type<0> = [Boolean,506,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 507; @position = 18; @symbol_constdef = [dithering,507,18,27]; @symbol_type<0> = [String,507,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 508; @position = 18; @symbol_constdef = [automaticPalette,508,18,34]; @symbol_type<0> = [Boolean,508,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 511; @symbol_moduledef = [system_loc__hint_button_right_middle,511,15,51]; ]
+        module system_loc__hint_button_right_middle {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 511; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 512; @position = 18; @symbol_constdef = [exclude,512,18,25]; @symbol_type<0> = [Boolean,512,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 515; @symbol_moduledef = [system_icon_dark__cancel,515,15,39]; ]
+        module system_icon_dark__cancel {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 515; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 516; @position = 18; @symbol_constdef = [filename,516,18,26]; @symbol_type<0> = [String,516,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__cancel.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 517; @position = 18; @symbol_constdef = [disableTransparency,517,18,37]; @symbol_type<0> = [Boolean,517,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 518; @position = 18; @symbol_constdef = [dithering,518,18,27]; @symbol_type<0> = [String,518,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 519; @position = 18; @symbol_constdef = [automaticPalette,519,18,34]; @symbol_type<0> = [Boolean,519,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 522; @symbol_moduledef = [prompt_size__body_with_title,522,15,43]; ]
+        module prompt_size__body_with_title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 522; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 523; @position = 18; @symbol_constdef = [width,523,18,23]; @symbol_type<0> = [Number,523,27,33]; ]
+            const width as Number = 166;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 524; @position = 18; @symbol_constdef = [height,524,18,24]; @symbol_type<0> = [Number,524,28,34]; ]
+            const height as Number = 99;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 527; @symbol_moduledef = [system_loc__hint_button_right_top,527,15,48]; ]
+        module system_loc__hint_button_right_top {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 527; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 528; @position = 18; @symbol_constdef = [x,528,18,19]; @symbol_type<0> = [Number,528,23,29]; ]
+            const x as Number = 166;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 529; @position = 18; @symbol_constdef = [y,529,18,19]; @symbol_type<0> = [Number,529,23,29]; ]
+            const y as Number = 31;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 530; @position = 18; @symbol_constdef = [horizontalJustification,530,18,41]; @symbol_type<0> = [String,530,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 531; @position = 18; @symbol_constdef = [verticalJustification,531,18,39]; @symbol_type<0> = [String,531,43,49]; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 534; @symbol_moduledef = [system_color_light__text,534,15,39]; ]
+        module system_color_light__text {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 534; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 536 18 ]
+                symbol [ Graphics %tmp.66 536 31 39 ];
+                %tmp.66 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.67 536 40 57 ];
+                %tmp.67 = getv %tmp.66 :COLOR_TRANSPARENT;
+                putv self :background %tmp.67;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 535; @position = 18; @symbol_constdef = [color,535,18,23]; @symbol_type<0> = [Number,535,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 536; @position = 18; @symbol_constdef = [background,536,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 539; @symbol_moduledef = [system_icon_light__check,539,15,39]; ]
+        module system_icon_light__check {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 539; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 540; @position = 18; @symbol_constdef = [filename,540,18,26]; @symbol_type<0> = [String,540,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__check.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 541; @position = 18; @symbol_constdef = [disableTransparency,541,18,37]; @symbol_type<0> = [Boolean,541,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 542; @position = 18; @symbol_constdef = [dithering,542,18,27]; @symbol_type<0> = [String,542,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 543; @position = 18; @symbol_constdef = [automaticPalette,543,18,34]; @symbol_type<0> = [Boolean,543,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 546; @symbol_moduledef = [confirmation_input__reject,546,15,41]; ]
+        module confirmation_input__reject {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 546; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 547 18 ]
+                symbol [ WatchUi %tmp.68 547 27 34 ];
+                %tmp.68 = getm $.Toybox.WatchUi;
+                symbol [ KEY_DOWN %tmp.69 547 35 43 ];
+                %tmp.69 = getv %tmp.68 :KEY_DOWN;
+                putv self :button %tmp.69;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 547; @position = 18; @symbol_constdef = [button,547,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 550; @symbol_moduledef = [system_icon_light__revert,550,15,40]; ]
+        module system_icon_light__revert {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 550; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 551; @position = 18; @symbol_constdef = [filename,551,18,26]; @symbol_type<0> = [String,551,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__revert.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 552; @position = 18; @symbol_constdef = [disableTransparency,552,18,37]; @symbol_type<0> = [Boolean,552,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 553; @position = 18; @symbol_constdef = [dithering,553,18,27]; @symbol_type<0> = [String,553,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 554; @position = 18; @symbol_constdef = [automaticPalette,554,18,34]; @symbol_type<0> = [Boolean,554,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 557; @symbol_moduledef = [system_size__subwindow,557,15,37]; ]
+        module system_size__subwindow {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 557; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 558; @position = 18; @symbol_constdef = [width,558,18,23]; @symbol_type<0> = [Number,558,27,33]; ]
+            const width as Number = 62;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 559; @position = 18; @symbol_constdef = [height,559,18,24]; @symbol_type<0> = [Number,559,28,34]; ]
+            const height as Number = 62;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 562; @symbol_moduledef = [system_icon_positive__hint_button_left_bottom,562,15,60]; ]
+        module system_icon_positive__hint_button_left_bottom {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 562; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 563; @position = 18; @symbol_constdef = [exclude,563,18,25]; @symbol_type<0> = [Boolean,563,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 566; @symbol_moduledef = [system_icon_dark__check,566,15,38]; ]
+        module system_icon_dark__check {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 566; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 567; @position = 18; @symbol_constdef = [filename,567,18,26]; @symbol_type<0> = [String,567,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__check.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 568; @position = 18; @symbol_constdef = [disableTransparency,568,18,37]; @symbol_type<0> = [Boolean,568,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 569; @position = 18; @symbol_constdef = [dithering,569,18,27]; @symbol_type<0> = [String,569,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 570; @position = 18; @symbol_constdef = [automaticPalette,570,18,34]; @symbol_type<0> = [Boolean,570,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 573; @symbol_moduledef = [confirmation_loc__hint_keep,573,15,42]; ]
+        module confirmation_loc__hint_keep {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 573; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 574; @position = 18; @symbol_constdef = [x,574,18,19]; @symbol_type<0> = [Number,574,23,29]; ]
+            const x as Number = 0;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 575; @position = 18; @symbol_constdef = [y,575,18,19]; @symbol_type<0> = [Number,575,23,29]; ]
+            const y as Number = 138;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 578; @symbol_moduledef = [confirmation_loc__hint_delete,578,15,44]; ]
+        module confirmation_loc__hint_delete {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 578; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 579; @position = 18; @symbol_constdef = [verticallJustification,579,18,40]; @symbol_type<0> = [String,579,44,50]; ]
+            const verticallJustification as String = "center";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 580; @position = 18; @symbol_constdef = [x,580,18,19]; @symbol_type<0> = [Number,580,23,29]; ]
+            const x as Number = 146;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 581; @position = 18; @symbol_constdef = [y,581,18,19]; @symbol_type<0> = [Number,581,23,29]; ]
+            const y as Number = 15;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 582; @position = 18; @symbol_constdef = [horizontalJustification,582,18,41]; @symbol_type<0> = [String,582,45,51]; ]
+            const horizontalJustification as String = "center";
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 585; @symbol_moduledef = [system_icon_positive__hint_action_menu,585,15,53]; ]
+        module system_icon_positive__hint_action_menu {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 585; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 586; @position = 18; @symbol_constdef = [filename,586,18,26]; @symbol_type<0> = [String,586,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_positive__hint_button_right_top.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 587; @position = 18; @symbol_constdef = [disableTransparency,587,18,37]; @symbol_type<0> = [Boolean,587,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 588; @position = 18; @symbol_constdef = [dithering,588,18,27]; @symbol_type<0> = [String,588,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 589; @position = 18; @symbol_constdef = [automaticPalette,589,18,34]; @symbol_type<0> = [Boolean,589,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 592; @symbol_moduledef = [system_icon_positive__hint_button_right_middle,592,15,61]; ]
+        module system_icon_positive__hint_button_right_middle {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 592; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 593; @position = 18; @symbol_constdef = [exclude,593,18,25]; @symbol_type<0> = [Boolean,593,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 596; @symbol_moduledef = [system_icon_light__hint_button_left_middle,596,15,57]; ]
+        module system_icon_light__hint_button_left_middle {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 596; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 597; @position = 18; @symbol_constdef = [exclude,597,18,25]; @symbol_type<0> = [Boolean,597,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 600; @symbol_moduledef = [system_icon_dark__hint_button_right_bottom,600,15,57]; ]
+        module system_icon_dark__hint_button_right_bottom {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 600; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 601; @position = 18; @symbol_constdef = [exclude,601,18,25]; @symbol_type<0> = [Boolean,601,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 604; @symbol_moduledef = [system_icon_positive__hint_button_right_bottom,604,15,61]; ]
+        module system_icon_positive__hint_button_right_bottom {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 604; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 605; @position = 18; @symbol_constdef = [exclude,605,18,25]; @symbol_type<0> = [Boolean,605,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 608; @symbol_moduledef = [system_icon_dark__revert,608,15,39]; ]
+        module system_icon_dark__revert {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 608; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 609; @position = 18; @symbol_constdef = [filename,609,18,26]; @symbol_type<0> = [String,609,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__revert.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 610; @position = 18; @symbol_constdef = [disableTransparency,610,18,37]; @symbol_type<0> = [Boolean,610,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 611; @position = 18; @symbol_constdef = [dithering,611,18,27]; @symbol_type<0> = [String,611,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 612; @position = 18; @symbol_constdef = [automaticPalette,612,18,34]; @symbol_type<0> = [Boolean,612,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 615; @symbol_moduledef = [confirmation_icon_light__hint_delete,615,15,51]; ]
+        module confirmation_icon_light__hint_delete {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 615; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 616; @position = 18; @symbol_constdef = [filename,616,18,26]; @symbol_type<0> = [String,616,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 617; @position = 18; @symbol_constdef = [disableTransparency,617,18,37]; @symbol_type<0> = [Boolean,617,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 618; @position = 18; @symbol_constdef = [dithering,618,18,27]; @symbol_type<0> = [String,618,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 619; @position = 18; @symbol_constdef = [automaticPalette,619,18,34]; @symbol_type<0> = [Boolean,619,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 622; @symbol_moduledef = [system_icon_dark__question,622,15,41]; ]
+        module system_icon_dark__question {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 622; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 623; @position = 18; @symbol_constdef = [filename,623,18,26]; @symbol_type<0> = [String,623,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__question.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 624; @position = 18; @symbol_constdef = [disableTransparency,624,18,37]; @symbol_type<0> = [Boolean,624,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 625; @position = 18; @symbol_constdef = [dithering,625,18,27]; @symbol_type<0> = [String,625,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 626; @position = 18; @symbol_constdef = [automaticPalette,626,18,34]; @symbol_type<0> = [Boolean,626,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 629; @symbol_moduledef = [system_icon_light__discard,629,15,41]; ]
+        module system_icon_light__discard {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 629; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 630; @position = 18; @symbol_constdef = [filename,630,18,26]; @symbol_type<0> = [String,630,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__discard.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 631; @position = 18; @symbol_constdef = [disableTransparency,631,18,37]; @symbol_type<0> = [Boolean,631,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 632; @position = 18; @symbol_constdef = [dithering,632,18,27]; @symbol_type<0> = [String,632,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 633; @position = 18; @symbol_constdef = [automaticPalette,633,18,34]; @symbol_type<0> = [Boolean,633,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 636; @symbol_moduledef = [device_info,636,15,26]; ]
+        module device_info {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 636; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 638 18 ]
+                symbol [ Toybox %tmp.71 638 32 38 ];
+                %tmp.71 = getv ? :Toybox;
+                symbol [ System %tmp.72 638 39 45 ];
+                %tmp.72 = getv %tmp.71 :System;
+                symbol [ SCREEN_SHAPE_SEMI_OCTAGON %tmp.73 638 46 71 ];
+                %tmp.73 = getv %tmp.72 :SCREEN_SHAPE_SEMI_OCTAGON;
+                putv self :screenShape %tmp.73;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 637; @position = 18; @symbol_constdef = [screenWidth,637,18,29]; @symbol_type<0> = [Number,637,33,39]; ]
+            const screenWidth as Number = 176;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 638; @position = 18; @symbol_constdef = [screenShape,638,18,29]; ]
+            const screenShape;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 639; @position = 18; @symbol_constdef = [hasNightMode,639,18,30]; @symbol_type<0> = [Boolean,639,34,41]; ]
+            const hasNightMode as Boolean = false;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 640; @position = 18; @symbol_constdef = [hasGpu,640,18,24]; @symbol_type<0> = [Boolean,640,28,35]; ]
+            const hasGpu as Boolean = false;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 641; @position = 18; @symbol_constdef = [screenHeight,641,18,30]; @symbol_type<0> = [Number,641,34,40]; ]
+            const screenHeight as Number = 176;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 642; @position = 18; @symbol_constdef = [hasTouchScreen,642,18,32]; @symbol_type<0> = [Boolean,642,36,43]; ]
+            const hasTouchScreen as Boolean = false;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 643; @position = 18; @symbol_constdef = [hasEnhancedReadabilityMode,643,18,44]; @symbol_type<0> = [Boolean,643,48,55]; ]
+            const hasEnhancedReadabilityMode as Boolean = false;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 646; @symbol_moduledef = [confirmation_icon_dark__hint_confirm,646,15,51]; ]
+        module confirmation_icon_dark__hint_confirm {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 646; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 647; @position = 18; @symbol_constdef = [filename,647,18,26]; @symbol_type<0> = [String,647,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 648; @position = 18; @symbol_constdef = [disableTransparency,648,18,37]; @symbol_type<0> = [Boolean,648,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 649; @position = 18; @symbol_constdef = [dithering,649,18,27]; @symbol_type<0> = [String,649,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 650; @position = 18; @symbol_constdef = [automaticPalette,650,18,34]; @symbol_type<0> = [Boolean,650,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 653; @symbol_moduledef = [prompt_font__body_no_title,653,15,41]; ]
+        module prompt_font__body_no_title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 653; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 654 18 ]
+                symbol [ Graphics %tmp.74 654 34 42 ];
+                %tmp.74 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.75 654 43 62 ];
+                %tmp.75 = getv %tmp.74 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.75;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 655 18 ]
+                symbol [ Graphics %tmp.76 655 25 33 ];
+                %tmp.76 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.77 655 34 43 ];
+                %tmp.77 = getv %tmp.76 :FONT_TINY;
+                putv self :font %tmp.77;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 654; @position = 18; @symbol_constdef = [justification,654,18,31]; ]
+            const justification;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 655; @position = 18; @symbol_constdef = [font,655,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 658; @symbol_moduledef = [prompt_size__title_icon,658,15,38]; ]
+        module prompt_size__title_icon {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 658; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 659; @position = 18; @symbol_constdef = [scaleX,659,18,24]; @symbol_type<0> = [Number,659,28,34]; ]
+            const scaleX as Number = 38;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 660; @position = 18; @symbol_constdef = [scaleY,660,18,24]; @symbol_type<0> = [Number,660,28,34]; ]
+            const scaleY as Number = 38;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 661; @position = 18; @symbol_constdef = [scaleRelativeTo,661,18,33]; @symbol_type<0> = [String,661,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 664; @symbol_moduledef = [system_icon_dark__warning,664,15,40]; ]
+        module system_icon_dark__warning {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 664; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 665; @position = 18; @symbol_constdef = [filename,665,18,26]; @symbol_type<0> = [String,665,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__warning.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 666; @position = 18; @symbol_constdef = [disableTransparency,666,18,37]; @symbol_type<0> = [Boolean,666,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 667; @position = 18; @symbol_constdef = [dithering,667,18,27]; @symbol_type<0> = [String,667,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 668; @position = 18; @symbol_constdef = [automaticPalette,668,18,34]; @symbol_type<0> = [Boolean,668,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 671; @symbol_moduledef = [prompt_loc__title_icon,671,15,37]; ]
+        module prompt_loc__title_icon {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 671; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 672; @position = 18; @symbol_constdef = [x,672,18,19]; @symbol_type<0> = [Number,672,23,29]; ]
+            const x as Number = 145;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 673; @position = 18; @symbol_constdef = [y,673,18,19]; @symbol_type<0> = [Number,673,23,29]; ]
+            const y as Number = 31;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 674; @position = 18; @symbol_constdef = [horizontalJustification,674,18,41]; @symbol_type<0> = [String,674,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 675; @position = 18; @symbol_constdef = [verticalJustification,675,18,39]; @symbol_type<0> = [String,675,43,49]; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 678; @symbol_moduledef = [prompt_font_enhanced_readability__title,678,15,54]; ]
+        module prompt_font_enhanced_readability__title {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 678; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 679; @position = 18; @symbol_constdef = [exclude,679,18,25]; @symbol_type<0> = [Boolean,679,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 682; @symbol_moduledef = [prompt_color_dark__body,682,15,38]; ]
+        module prompt_color_dark__body {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 682; ]
+            <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen" 684 18 ]
+                symbol [ Graphics %tmp.78 684 31 39 ];
+                %tmp.78 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.79 684 40 57 ];
+                %tmp.79 = getv %tmp.78 :COLOR_TRANSPARENT;
+                putv self :background %tmp.79;
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 683; @position = 18; @symbol_constdef = [color,683,18,23]; @symbol_type<0> = [Number,683,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 684; @position = 18; @symbol_constdef = [background,684,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 687; @symbol_moduledef = [confirmation_icon__hint_delete,687,15,45]; ]
+        module confirmation_icon__hint_delete {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 687; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 688; @position = 18; @symbol_constdef = [filename,688,18,26]; @symbol_type<0> = [String,688,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 689; @position = 18; @symbol_constdef = [disableTransparency,689,18,37]; @symbol_type<0> = [Boolean,689,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 690; @position = 18; @symbol_constdef = [dithering,690,18,27]; @symbol_type<0> = [String,690,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 691; @position = 18; @symbol_constdef = [automaticPalette,691,18,34]; @symbol_type<0> = [Boolean,691,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 694; @symbol_moduledef = [system_icon_light__hint_button_right_top,694,15,55]; ]
+        module system_icon_light__hint_button_right_top {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 694; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 695; @position = 18; @symbol_constdef = [filename,695,18,26]; @symbol_type<0> = [String,695,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 696; @position = 18; @symbol_constdef = [disableTransparency,696,18,37]; @symbol_type<0> = [Boolean,696,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 697; @position = 18; @symbol_constdef = [dithering,697,18,27]; @symbol_type<0> = [String,697,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 698; @position = 18; @symbol_constdef = [automaticPalette,698,18,34]; @symbol_type<0> = [Boolean,698,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 701; @symbol_moduledef = [confirmation_size__body,701,15,38]; ]
+        module confirmation_size__body {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 701; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 702; @position = 18; @symbol_constdef = [width,702,18,23]; @symbol_type<0> = [Number,702,27,33]; ]
+            const width as Number = 173;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 703; @position = 18; @symbol_constdef = [height,703,18,24]; @symbol_type<0> = [Number,703,28,34]; ]
+            const height as Number = 63;
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 706; @symbol_moduledef = [system_icon_positive__check,706,15,42]; ]
+        module system_icon_positive__check {
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 706; ]
+            <init> {
+            }
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 707; @position = 18; @symbol_constdef = [filename,707,18,26]; @symbol_type<0> = [String,707,30,36]; ]
+            const filename as String = "/Users/Brysonzdeck/Library/Application Support/Garmin/ConnectIQ/Devices/instinct2/system_icon_dark__check.svg";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 708; @position = 18; @symbol_constdef = [disableTransparency,708,18,37]; @symbol_type<0> = [Boolean,708,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 709; @position = 18; @symbol_constdef = [dithering,709,18,27]; @symbol_type<0> = [String,709,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 710; @position = 18; @symbol_constdef = [automaticPalette,710,18,34]; @symbol_type<0> = [Boolean,710,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+    }
+}
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/Instinct_app_build_folder/gen/006-B3888-00/source/Rez.mcgen"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,12 @@
+
+<resources>
+    <menus>
+        <menu2 id="ServoMenu">
+            <menu-item id="servo_on" label="Servo ON"/>
+            <menu-item id="servo_off" label="Servo OFF"/>
+        </menu2>
+    </menus>
+
+</resources>
+
+

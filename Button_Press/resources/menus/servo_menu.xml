@@ -1,0 +1,6 @@
+
+<!-- resources/menus/servo_menu.xml -->
+<menu2 id="ServoMenu">
+    <menu-item id="servo_on"  label="Lights ON"/>
+    <menu-item id="servo_off" label="Lights OFF"/>
+</menu2>

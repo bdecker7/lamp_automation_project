@@ -1,0 +1,118 @@
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [System,2,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [WatchUi,3,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Lang,4,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 6; @symbol_classdef = [Button_PressDelegate,6,6,26]; @symbol_extends<0> = [WatchUi,6,35,42]; @symbol_extends<1> = [BehaviorDelegate,6,43,59]; ]
+class Button_PressDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 8; @symbol_functiondef = [initialize,8,13,23]; ]
+    function initialize() as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_8_26_10_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 9 8 ]
+        symbol [ BehaviorDelegate %tmp.2 9 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 9 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_8_26_10_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 13; @symbol_functiondef = [onBack,13,13,19]; @symbol_return<0> = [Boolean,13,25,32]; ]
+    function onBack() as Boolean {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_13_33_16_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 15 8 ]
+        %tmp.1 = true;
+        ret %tmp.1;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_13_33_16_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 19; @symbol_functiondef = [onSelect,19,13,21]; @symbol_return<0> = [Boolean,19,27,34]; ]
+    function onSelect() as Boolean {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_19_35_27_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 20 8 ]
+        symbol [ System %tmp.1 20 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 20 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "[Delegate] Select/SET pressed — opening menu";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 21 8 ]
+        symbol [ WatchUi %tmp.4 21 8 15 ];
+        %tmp.4 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.5 21 16 24 ];
+        %tmp.5 = getv function %tmp.4 :pushView;
+        symbol [ Rez %tmp.9 22 16 19 ];
+        %tmp.9 = getv ? :Rez;
+        symbol [ Menus %tmp.10 22 20 25 ];
+        %tmp.10 = getv %tmp.9 :Menus;
+        symbol [ ServoMenu %tmp.11 22 26 35 ];
+        %tmp.11 = getv function ? %tmp.10 :ServoMenu;
+        %tmp.6 = newc %tmp.11 ();
+        symbol [ ServoMenuDelegate %tmp.15 23 16 33 ];
+        %tmp.15 = getv ? :ServoMenuDelegate;
+        %tmp.12 = newc %tmp.15 ();
+        symbol [ WatchUi %tmp.16 24 12 19 ];
+        %tmp.16 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.17 24 20 28 ];
+        %tmp.17 = getv %tmp.16 :SLIDE_UP;
+        invoke %tmp.4 %tmp.5(%tmp.6, %tmp.12, %tmp.17);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 26 8 ]
+        %tmp.18 = true;
+        ret %tmp.18;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_19_35_27_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 30; @symbol_functiondef = [onMenu,30,13,19]; @symbol_return<0> = [Boolean,30,25,32]; ]
+    function onMenu() as Boolean {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_30_33_35_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 31 8 ]
+        symbol [ System %tmp.1 31 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 31 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "[Delegate] Menu short press (may not fire on Instinct)";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 34 8 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_30_33_35_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 38; @symbol_functiondef = [onPrevious,38,13,23]; @symbol_return<0> = [Boolean,38,29,36]; ]
+    function onPrevious() as Boolean {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_38_37_41_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 39 8 ]
+        symbol [ System %tmp.1 39 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 39 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "[Delegate] Previous/Up";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 40 8 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_38_37_41_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 43; @symbol_functiondef = [onNext,43,13,19]; @symbol_return<0> = [Boolean,43,25,32]; ]
+    function onNext() as Boolean {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_43_33_46_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 44 8 ]
+        symbol [ System %tmp.1 44 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 44 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "[Delegate] Next/Down";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc" 45 8 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressDelegate_mc_43_33_46_4_stop:
+    }
+}
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressDelegate.mc"; @line = 2; ]
+<init> {
+}

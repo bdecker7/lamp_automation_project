@@ -1,0 +1,286 @@
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 19; @symbol_importdef<0> = [Toybox,19,7,13]; @symbol_importdef<1> = [Graphics,19,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 20; @symbol_importdef<0> = [Toybox,20,7,13]; @symbol_importdef<1> = [WatchUi,20,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 21; @symbol_importdef<0> = [Toybox,21,7,13]; @symbol_importdef<1> = [Lang,21,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 22; @symbol_importdef<0> = [Toybox,22,7,13]; @symbol_importdef<1> = [System,22,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 24; @symbol_classdef = [Button_PressView,24,6,22]; @symbol_extends<0> = [WatchUi,24,31,38]; @symbol_extends<1> = [View,24,39,43]; ]
+class Button_PressView extends WatchUi.View {
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 24; ]
+    <init> {
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 24; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 26; @symbol_functiondef = [initialize,26,13,23]; ]
+    function initialize() as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_26_26_28_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 27 8 ]
+        symbol [ View %tmp.2 27 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 27 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_26_26_28_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 30; @symbol_functiondef = [onLayout,30,13,21]; @symbol_param<0> = [dc,30,22,24]; @symbol_param<0>_type<0> = [Graphics,30,28,36]; @symbol_param<0>_type<1> = [Dc,30,37,39]; ]
+    function onLayout(dc as Graphics.Dc) as Void {
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 36; @symbol_functiondef = [onShow,36,13,19]; ]
+    function onShow() as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_36_30_39_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 38 8 ]
+        symbol [ WatchUi %tmp.1 38 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.2 38 16 29 ];
+        %tmp.2 = getv function %tmp.1 :requestUpdate;
+        invoke %tmp.1 %tmp.2();
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_36_30_39_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 41; @symbol_functiondef = [onUpdate,41,13,21]; @symbol_param<0> = [dc,41,22,24]; @symbol_param<0>_type<0> = [Graphics,41,28,36]; @symbol_param<0>_type<1> = [Dc,41,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 43 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 43 8 10 ];
+        symbol [ setColor %tmp.2 43 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 43 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.4 43 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_BLACK;
+        symbol [ Graphics %tmp.5 43 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 43 51 62 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 44 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 44 8 10 ];
+        symbol [ clear %tmp.8 44 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 46 8 ]
+        [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_stop" ]
+        %w.1 = local;
+        symbol [ w %w.1 46 12 13 ];
+        %tmp.9 = lgetv %dc;
+        symbol [ dc %tmp.9 46 16 18 ];
+        symbol [ getWidth %tmp.10 46 19 27 ];
+        %tmp.10 = getv function %tmp.9 :getWidth;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %w.1 %tmp.11;
+        symbol [ w %w.1 46 12 13 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 47 8 ]
+        [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_stop" ]
+        %h.2 = local;
+        symbol [ h %h.2 47 12 13 ];
+        %tmp.12 = lgetv %dc;
+        symbol [ dc %tmp.12 47 16 18 ];
+        symbol [ getHeight %tmp.13 47 19 28 ];
+        %tmp.13 = getv function %tmp.12 :getHeight;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        lputv %h.2 %tmp.14;
+        symbol [ h %h.2 47 12 13 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 48 8 ]
+        [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_stop" ]
+        %cx.3 = local;
+        symbol [ cx %cx.3 48 12 14 ];
+        %tmp.15 = lgetv %w.1;
+        symbol [ w %tmp.15 48 17 18 ];
+        %tmp.16 = 2;
+        %tmp.17 = div %tmp.15 %tmp.16;
+        lputv %cx.3 %tmp.17;
+        symbol [ cx %cx.3 48 12 14 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 49 8 ]
+        [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_stop" ]
+        %cy.4 = local;
+        symbol [ cy %cy.4 49 12 14 ];
+        %tmp.18 = lgetv %h.2;
+        symbol [ h %tmp.18 49 17 18 ];
+        %tmp.19 = 2;
+        %tmp.20 = div %tmp.18 %tmp.19;
+        lputv %cy.4 %tmp.20;
+        symbol [ cy %cy.4 49 12 14 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 52 8 ]
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 52 8 10 ];
+        symbol [ setColor %tmp.22 52 11 19 ];
+        %tmp.22 = getv function %tmp.21 :setColor;
+        symbol [ Graphics %tmp.23 52 20 28 ];
+        %tmp.23 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.24 52 29 40 ];
+        %tmp.24 = getv %tmp.23 :COLOR_WHITE;
+        symbol [ Graphics %tmp.25 52 42 50 ];
+        %tmp.25 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.26 52 51 68 ];
+        %tmp.26 = getv %tmp.25 :COLOR_TRANSPARENT;
+        invoke %tmp.21 %tmp.22(%tmp.24, %tmp.26);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 53 8 ]
+        %tmp.27 = lgetv %dc;
+        symbol [ dc %tmp.27 53 8 10 ];
+        symbol [ drawText %tmp.28 53 11 19 ];
+        %tmp.28 = getv function %tmp.27 :drawText;
+        %tmp.29 = lgetv %cx.3;
+        symbol [ cx %tmp.29 54 12 14 ];
+        %tmp.30 = 20;
+        symbol [ Graphics %tmp.31 55 12 20 ];
+        %tmp.31 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.32 55 21 30 ];
+        %tmp.32 = getv %tmp.31 :FONT_TINY;
+        %tmp.33 = "Lamp Control";
+        symbol [ Graphics %tmp.34 57 12 20 ];
+        %tmp.34 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.35 57 21 40 ];
+        %tmp.35 = getv %tmp.34 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.27 %tmp.28(%tmp.29, %tmp.30, %tmp.32, %tmp.33, %tmp.35);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 61 8 ]
+        [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_stop" ]
+        %status.5 = local;
+        symbol [ status %status.5 61 12 18 ];
+        symbol [ BLEManager %tmp.37 61 21 31 ];
+        %tmp.37 = getv ? :BLEManager;
+        symbol [ getStatus %tmp.38 61 32 41 ];
+        %tmp.38 = getv function %tmp.37 :getStatus;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        lputv %status.5 %tmp.39;
+        symbol [ status %status.5 61 12 18 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 62 8 ]
+        [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_stop" ]
+        %statusColor.6 = local;
+        symbol [ statusColor %statusColor.6 62 12 23 ];
+        symbol [ BLEManager %tmp.41 62 26 36 ];
+        %tmp.41 = getv ? :BLEManager;
+        symbol [ getStatusColor %tmp.42 62 37 51 ];
+        %tmp.42 = getv function %tmp.41 :getStatusColor;
+        %tmp.43 = invoke %tmp.41 %tmp.42();
+        lputv %statusColor.6 %tmp.43;
+        symbol [ statusColor %statusColor.6 62 12 23 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 63 8 ]
+        %tmp.44 = lgetv %dc;
+        symbol [ dc %tmp.44 63 8 10 ];
+        symbol [ setColor %tmp.45 63 11 19 ];
+        %tmp.45 = getv function %tmp.44 :setColor;
+        %tmp.46 = lgetv %statusColor.6;
+        symbol [ statusColor %tmp.46 63 20 31 ];
+        symbol [ Graphics %tmp.47 63 33 41 ];
+        %tmp.47 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.48 63 42 59 ];
+        %tmp.48 = getv %tmp.47 :COLOR_TRANSPARENT;
+        invoke %tmp.44 %tmp.45(%tmp.46, %tmp.48);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 64 8 ]
+        %tmp.49 = lgetv %dc;
+        symbol [ dc %tmp.49 64 8 10 ];
+        symbol [ drawText %tmp.50 64 11 19 ];
+        %tmp.50 = getv function %tmp.49 :drawText;
+        %tmp.51 = lgetv %cx.3;
+        symbol [ cx %tmp.51 65 12 14 ];
+        %tmp.52 = lgetv %cy.4;
+        symbol [ cy %tmp.52 65 16 18 ];
+        %tmp.53 = 20;
+        %tmp.54 = sub %tmp.52 %tmp.53;
+        symbol [ Graphics %tmp.55 66 12 20 ];
+        %tmp.55 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.56 66 21 31 ];
+        %tmp.56 = getv %tmp.55 :FONT_SMALL;
+        %tmp.57 = lgetv %status.5;
+        symbol [ status %tmp.57 67 12 18 ];
+        symbol [ Graphics %tmp.58 68 12 20 ];
+        %tmp.58 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.59 68 21 40 ];
+        %tmp.59 = getv %tmp.58 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.49 %tmp.50(%tmp.51, %tmp.54, %tmp.56, %tmp.57, %tmp.59);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 72 8 ]
+        [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_stop" ]
+        %lastAction.7 = local;
+        symbol [ lastAction %lastAction.7 72 12 22 ];
+        symbol [ BLEManager %tmp.61 72 25 35 ];
+        %tmp.61 = getv ? :BLEManager;
+        symbol [ getLastAction %tmp.62 72 36 49 ];
+        %tmp.62 = getv function %tmp.61 :getLastAction;
+        %tmp.63 = invoke %tmp.61 %tmp.62();
+        lputv %lastAction.7 %tmp.63;
+        symbol [ lastAction %lastAction.7 72 12 22 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 73 8 ]
+        %tmp.64 = lgetv %dc;
+        symbol [ dc %tmp.64 73 8 10 ];
+        symbol [ setColor %tmp.65 73 11 19 ];
+        %tmp.65 = getv function %tmp.64 :setColor;
+        symbol [ Graphics %tmp.66 73 20 28 ];
+        %tmp.66 = getm $.Toybox.Graphics;
+        symbol [ COLOR_LT_GRAY %tmp.67 73 29 42 ];
+        %tmp.67 = getv %tmp.66 :COLOR_LT_GRAY;
+        symbol [ Graphics %tmp.68 73 44 52 ];
+        %tmp.68 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.69 73 53 70 ];
+        %tmp.69 = getv %tmp.68 :COLOR_TRANSPARENT;
+        invoke %tmp.64 %tmp.65(%tmp.67, %tmp.69);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 74 8 ]
+        %tmp.70 = lgetv %dc;
+        symbol [ dc %tmp.70 74 8 10 ];
+        symbol [ drawText %tmp.71 74 11 19 ];
+        %tmp.71 = getv function %tmp.70 :drawText;
+        %tmp.72 = lgetv %cx.3;
+        symbol [ cx %tmp.72 75 12 14 ];
+        %tmp.73 = lgetv %cy.4;
+        symbol [ cy %tmp.73 75 16 18 ];
+        %tmp.74 = 20;
+        %tmp.75 = add %tmp.73 %tmp.74;
+        symbol [ Graphics %tmp.76 76 12 20 ];
+        %tmp.76 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.77 76 21 30 ];
+        %tmp.77 = getv %tmp.76 :FONT_TINY;
+        %tmp.78 = lgetv %lastAction.7;
+        symbol [ lastAction %tmp.78 77 12 22 ];
+        symbol [ Graphics %tmp.79 78 12 20 ];
+        %tmp.79 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.80 78 21 40 ];
+        %tmp.80 = getv %tmp.79 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.70 %tmp.71(%tmp.72, %tmp.75, %tmp.77, %tmp.78, %tmp.80);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 82 8 ]
+        %tmp.81 = lgetv %dc;
+        symbol [ dc %tmp.81 82 8 10 ];
+        symbol [ setColor %tmp.82 82 11 19 ];
+        %tmp.82 = getv function %tmp.81 :setColor;
+        symbol [ Graphics %tmp.83 82 20 28 ];
+        %tmp.83 = getm $.Toybox.Graphics;
+        symbol [ COLOR_DK_GRAY %tmp.84 82 29 42 ];
+        %tmp.84 = getv %tmp.83 :COLOR_DK_GRAY;
+        symbol [ Graphics %tmp.85 82 44 52 ];
+        %tmp.85 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.86 82 53 70 ];
+        %tmp.86 = getv %tmp.85 :COLOR_TRANSPARENT;
+        invoke %tmp.81 %tmp.82(%tmp.84, %tmp.86);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc" 83 8 ]
+        %tmp.87 = lgetv %dc;
+        symbol [ dc %tmp.87 83 8 10 ];
+        symbol [ drawText %tmp.88 83 11 19 ];
+        %tmp.88 = getv function %tmp.87 :drawText;
+        %tmp.89 = lgetv %cx.3;
+        symbol [ cx %tmp.89 84 12 14 ];
+        %tmp.90 = lgetv %h.2;
+        symbol [ h %tmp.90 84 16 17 ];
+        %tmp.91 = 30;
+        %tmp.92 = sub %tmp.90 %tmp.91;
+        symbol [ Graphics %tmp.93 85 12 20 ];
+        %tmp.93 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.94 85 21 30 ];
+        %tmp.94 = getv %tmp.93 :FONT_TINY;
+        %tmp.95 = "SET = Menu";
+        symbol [ Graphics %tmp.96 87 12 20 ];
+        %tmp.96 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.97 87 21 40 ];
+        %tmp.97 = getv %tmp.96 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.87 %tmp.88(%tmp.89, %tmp.92, %tmp.94, %tmp.95, %tmp.97);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Button_PressView_mc_41_49_89_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 91; @symbol_functiondef = [onHide,91,13,19]; ]
+    function onHide() as Void {
+    }
+}
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Button_PressView.mc"; @line = 19; ]
+<init> {
+}

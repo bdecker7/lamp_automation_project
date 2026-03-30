@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "Button_Press",
+			"path": "Garmin_connection_app/Button_Press"
+		}
+	],
+	"settings": {}
+}

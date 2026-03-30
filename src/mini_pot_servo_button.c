@@ -1,4 +1,4 @@
-
+#include "mini_pot_servo&button.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/ledc.h"
@@ -7,12 +7,14 @@
 #include "esp_err.h"
 #include "esp_timer.h"
 #include <math.h>  // for fabsf
+#include "servo_ble.h"
+
 
 // ===== Configuration =====
 #define TAG                     "SERVO_BTN"
 
 // --- Servo config ---
-#define SERVO_GPIO              (GPIO_NUM_1)          // Consider GPIO18 if UART TX on GPIO1 causes issues
+#define SERVO_GPIO              (GPIO_NUM_18)          // Consider GPIO18 if UART TX on GPIO1 causes issues
 #define SERVO_LEDC_MODE         (LEDC_LOW_SPEED_MODE)
 #define SERVO_LEDC_TIMER        (LEDC_TIMER_0)
 #define SERVO_LEDC_CHANNEL      (LEDC_CHANNEL_0)
@@ -34,13 +36,17 @@ static float pulse_mid_us = SERVO_SAFE_MID_US;
 static float pulse_max_us = SERVO_SAFE_MAX_US;
 
 // --- Button config (active-low recommended) ---
-#define BUTTON_GPIO             (GPIO_NUM_4)
+#define BUTTON_GPIO             (GPIO_NUM_14)         // pin for button press
 #define BUTTON_ACTIVE_LEVEL     (0)
 #define BUTTON_DEBOUNCE_MS      (500)
 
 // ===== Globals =====
-static volatile bool g_trigger_cycle = false;
+volatile bool g_trigger_cycle = false;
 static volatile int64_t g_last_press_us = 0;
+
+// ====== Testing ======
+
+extern void ble_test_run(void);
 
 // ===== Servo helpers =====
 
@@ -86,7 +92,7 @@ static inline esp_err_t servo_set_angle(float deg)
 }
 
 //function for small servo that has angle assignment to press lamp button
-static void small_motor_move(void)
+void small_motor_move(void)
 {
     servo_set_angle(0);                            //Starts with servo arm up
     vTaskDelay(pdMS_TO_TICKS(1000));            //delay for 1 second
@@ -105,10 +111,11 @@ static void IRAM_ATTR button_isr(void *arg)
     if (now_us - g_last_press_us > (int64_t)BUTTON_DEBOUNCE_MS * 1000) {
         g_last_press_us = now_us;
         g_trigger_cycle = true;
+        ESP_LOGI(TAG, "button was pressed\n");
     }
 }
 
-static void button_init(void)
+void button_init(void)
 {
     gpio_config_t io_conf = {
         .pin_bit_mask   = (1ULL << BUTTON_GPIO),
@@ -149,10 +156,16 @@ void app_main(void)
     // Button
     button_init();
 
+    //Start bluetooth
+    servo_ble_start();
+    // ble_test_run();
+
+
     // When button is pressed, g_trigger_cycle returns true and performs the rotation for the servo
     // If button is not pressed, then it is stopped and does nothing.
     while (1) {
         if (g_trigger_cycle) {
+            ESP_LOGI(TAG,"triggered!");
             g_trigger_cycle = false;   // consume event
             // perform_cycle();
             small_motor_move();
@@ -161,5 +174,6 @@ void app_main(void)
             vTaskDelay(pdMS_TO_TICKS(10));
         }
     }
+
 }
 

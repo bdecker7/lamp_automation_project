@@ -1,0 +1,1218 @@
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [System,6,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Lang,7,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [BluetoothLowEnergy,8,14,32]; ]
+import Toybox.BluetoothLowEnergy;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [Application,9,14,25]; ]
+import Toybox.Application;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 10; @symbol_importdef<0> = [Toybox,10,7,13]; @symbol_importdef<1> = [Graphics,10,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 11; @symbol_importdef<0> = [Toybox,11,7,13]; @symbol_importdef<1> = [WatchUi,11,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 13; @symbol_moduledef = [BLEManager,13,7,17]; ]
+module BLEManager {
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 13; ]
+    <init> {
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 16 10 ]
+        symbol [ BluetoothLowEnergy %tmp.1 16 30 48 ];
+        %tmp.1 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ stringToUuid %tmp.2 16 49 61 ];
+        %tmp.2 = getv function %tmp.1 :stringToUuid;
+        %tmp.3 = "4fafc201-1fb5-459e-8fcc-c5c9c331914b";
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        putv self :LAMP_SERVICE_UUID %tmp.4;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 17 10 ]
+        symbol [ BluetoothLowEnergy %tmp.5 17 30 48 ];
+        %tmp.5 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ stringToUuid %tmp.6 17 49 61 ];
+        %tmp.6 = getv function %tmp.5 :stringToUuid;
+        %tmp.7 = "beb5483e-36e1-4688-b7f5-ea07361b26a8";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        putv self :LAMP_CHAR_UUID %tmp.8;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 27 8 ]
+        symbol [ Graphics %tmp.9 27 45 53 ];
+        %tmp.9 = getm $.Toybox.Graphics;
+        symbol [ COLOR_YELLOW %tmp.10 27 54 66 ];
+        %tmp.10 = getv %tmp.9 :COLOR_YELLOW;
+        putv self :_statusColor %tmp.10;
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 16; @position = 10; @symbol_constdef = [LAMP_SERVICE_UUID,16,10,27]; ]
+    const LAMP_SERVICE_UUID;
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 17; @position = 10; @symbol_constdef = [LAMP_CHAR_UUID,17,10,24]; ]
+    const LAMP_CHAR_UUID;
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 20; @position = 8; @symbol_vardef = [_device,20,8,15]; @symbol_type<0> = [BluetoothLowEnergy,20,22,40]; @symbol_type<1> = [Device,20,41,47]; ]
+    var _device as BluetoothLowEnergy.Device or Null = null;
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 21; @position = 8; @symbol_vardef = [_service,21,8,16]; @symbol_type<0> = [BluetoothLowEnergy,21,22,40]; @symbol_type<1> = [Service,21,41,48]; ]
+    var _service as BluetoothLowEnergy.Service or Null = null;
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 22; @position = 8; @symbol_vardef = [_charLamp,22,8,17]; @symbol_type<0> = [BluetoothLowEnergy,22,22,40]; @symbol_type<1> = [Characteristic,22,41,55]; ]
+    var _charLamp as BluetoothLowEnergy.Characteristic or Null = null;
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 25; @position = 8; @symbol_vardef = [_status,25,8,15]; @symbol_type<0> = [Lang,25,23,27]; @symbol_type<1> = [String,25,28,34]; ]
+    var _status as Lang.String = "Scanning...";
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 26; @position = 8; @symbol_vardef = [_lastAction,26,8,19]; @symbol_type<0> = [Lang,26,23,27]; @symbol_type<1> = [String,26,28,34]; ]
+    var _lastAction as Lang.String = "Waiting...";
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 27; @position = 8; @symbol_vardef = [_statusColor,27,8,20]; @symbol_type<0> = [Graphics,27,24,32]; @symbol_type<1> = [ColorType,27,33,42]; ]
+    var _statusColor as Graphics.ColorType;
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 30; @symbol_functiondef = [getStatus,30,13,22]; @symbol_return<0> = [Lang,30,28,32]; @symbol_return<1> = [String,30,33,39]; ]
+    function getStatus() as Lang.String {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_30_40_32_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 31 8 ]
+        symbol [ _status %tmp.2 31 15 22 ];
+        %tmp.2 = getv ? :_status;
+        ret %tmp.2;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_30_40_32_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 34; @symbol_functiondef = [getLastAction,34,13,26]; @symbol_return<0> = [Lang,34,32,36]; @symbol_return<1> = [String,34,37,43]; ]
+    function getLastAction() as Lang.String {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_34_44_36_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 35 8 ]
+        symbol [ _lastAction %tmp.2 35 15 26 ];
+        %tmp.2 = getv ? :_lastAction;
+        ret %tmp.2;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_34_44_36_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 38; @symbol_functiondef = [getStatusColor,38,13,27]; @symbol_return<0> = [Graphics,38,33,41]; @symbol_return<1> = [ColorType,38,42,51]; ]
+    function getStatusColor() as Graphics.ColorType {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_38_52_40_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 39 8 ]
+        symbol [ _statusColor %tmp.2 39 15 27 ];
+        %tmp.2 = getv ? :_statusColor;
+        ret %tmp.2;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_38_52_40_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 43; @symbol_functiondef = [_setStatus,43,13,23]; @symbol_param<0> = [msg,43,24,27]; @symbol_param<0>_type<0> = [Lang,43,31,35]; @symbol_param<0>_type<1> = [String,43,36,42]; @symbol_param<1> = [color,43,44,49]; @symbol_param<1>_type<0> = [Graphics,43,53,61]; @symbol_param<1>_type<1> = [ColorType,43,62,71]; ]
+    function _setStatus(msg as Lang.String, color as Graphics.ColorType) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_43_81_48_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 44 8 ]
+        %tmp.1 = lgetv %msg;
+        symbol [ msg %tmp.1 44 18 21 ];
+        symbol [ _status ? 44 8 15 ];
+        putv self :_status %tmp.1;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 45 8 ]
+        %tmp.2 = lgetv %color;
+        symbol [ color %tmp.2 45 23 28 ];
+        symbol [ _statusColor ? 45 8 20 ];
+        putv self :_statusColor %tmp.2;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 46 8 ]
+        symbol [ System %tmp.3 46 8 14 ];
+        %tmp.3 = getm $.Toybox.System;
+        symbol [ println %tmp.4 46 15 22 ];
+        %tmp.4 = getv function %tmp.3 :println;
+        %tmp.5 = "[BLE] STATUS: ";
+        %tmp.6 = lgetv %msg;
+        symbol [ msg %tmp.6 46 42 45 ];
+        %tmp.7 = add %tmp.5 %tmp.6;
+        invoke %tmp.3 %tmp.4(%tmp.7);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 47 8 ]
+        symbol [ WatchUi %tmp.8 47 8 15 ];
+        %tmp.8 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.9 47 16 29 ];
+        %tmp.9 = getv function %tmp.8 :requestUpdate;
+        invoke %tmp.8 %tmp.9();
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_43_81_48_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 50; @symbol_functiondef = [_setAction,50,13,23]; @symbol_param<0> = [msg,50,24,27]; @symbol_param<0>_type<0> = [Lang,50,31,35]; @symbol_param<0>_type<1> = [String,50,36,42]; ]
+    function _setAction(msg as Lang.String) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_50_52_54_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 51 8 ]
+        %tmp.1 = lgetv %msg;
+        symbol [ msg %tmp.1 51 22 25 ];
+        symbol [ _lastAction ? 51 8 19 ];
+        putv self :_lastAction %tmp.1;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 52 8 ]
+        symbol [ System %tmp.2 52 8 14 ];
+        %tmp.2 = getm $.Toybox.System;
+        symbol [ println %tmp.3 52 15 22 ];
+        %tmp.3 = getv function %tmp.2 :println;
+        %tmp.4 = "[BLE] ACTION: ";
+        %tmp.5 = lgetv %msg;
+        symbol [ msg %tmp.5 52 42 45 ];
+        %tmp.6 = add %tmp.4 %tmp.5;
+        invoke %tmp.2 %tmp.3(%tmp.6);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 53 8 ]
+        symbol [ WatchUi %tmp.7 53 8 15 ];
+        %tmp.7 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.8 53 16 29 ];
+        %tmp.8 = getv function %tmp.7 :requestUpdate;
+        invoke %tmp.7 %tmp.8();
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_50_52_54_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 59; @symbol_classdef = [Delegate,59,10,18]; @symbol_extends<0> = [BluetoothLowEnergy,59,27,45]; @symbol_extends<1> = [BleDelegate,59,46,57]; ]
+    class Delegate extends BluetoothLowEnergy.BleDelegate {
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 59; ]
+        <init> {
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 59; ]
+        static
+        <init> {
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 61; @symbol_functiondef = [initialize,61,17,27]; ]
+        function initialize() as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_61_30_63_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 62 12 ]
+            symbol [ BluetoothLowEnergy %tmp.1 62 12 30 ];
+            %tmp.1 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ BleDelegate %tmp.2 62 31 42 ];
+            %tmp.2 = getv %tmp.1 :BleDelegate;
+            symbol [ initialize %tmp.3 62 43 53 ];
+            %tmp.3 = getv function %tmp.2 :initialize;
+            invoke %tmp.2 %tmp.3();
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_61_30_63_8_stop:
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 65; @symbol_functiondef = [onProfileRegister,65,17,34]; @symbol_param<0> = [uuid,65,35,39]; @symbol_param<0>_type<0> = [BluetoothLowEnergy,65,43,61]; @symbol_param<0>_type<1> = [Uuid,65,62,66]; @symbol_param<1> = [status,65,68,74]; @symbol_param<1>_type<0> = [BluetoothLowEnergy,65,78,96]; @symbol_param<1>_type<1> = [Status,65,97,103]; ]
+        function onProfileRegister(uuid as BluetoothLowEnergy.Uuid, status as BluetoothLowEnergy.Status) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_65_113_72_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 66 12 ]
+            symbol [ System %tmp.1 66 12 18 ];
+            %tmp.1 = getm $.Toybox.System;
+            symbol [ println %tmp.2 66 19 26 ];
+            %tmp.2 = getv function %tmp.1 :println;
+            %tmp.3 = "[BLE] Profile registered: ";
+            %tmp.4 = lgetv %uuid;
+            symbol [ uuid %tmp.4 66 58 62 ];
+            %tmp.5 = add %tmp.3 %tmp.4;
+            %tmp.6 = " status=";
+            %tmp.7 = add %tmp.5 %tmp.6;
+            %tmp.8 = lgetv %status;
+            symbol [ status %tmp.8 66 78 84 ];
+            %tmp.9 = add %tmp.7 %tmp.8;
+            invoke %tmp.1 %tmp.2(%tmp.9);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 67 12 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_67_12_71_12_if_stmt:
+            %tmp.10 = lgetv %status;
+            symbol [ status %tmp.10 67 16 22 ];
+            symbol [ BluetoothLowEnergy %tmp.11 67 26 44 ];
+            %tmp.11 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ STATUS_SUCCESS %tmp.12 67 45 59 ];
+            %tmp.12 = getv %tmp.11 :STATUS_SUCCESS;
+            %tmp.13 = eq %tmp.10 %tmp.12;
+            bf %tmp.13 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_67_12_71_12_if_else_false;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_67_12_71_12_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_67_61_69_12_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 68 16 ]
+            %tmp.14 = self;
+            symbol [ _setAction %tmp.15 68 16 26 ];
+            %tmp.15 = getv function %tmp.14 :_setAction;
+            %tmp.16 = "Profile OK";
+            invoke %tmp.14 %tmp.15(%tmp.16);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_67_61_69_12_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_67_12_71_12_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_67_12_71_12_if_else_false:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_69_19_71_12_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 70 16 ]
+            %tmp.17 = self;
+            symbol [ _setAction %tmp.18 70 16 26 ];
+            %tmp.18 = getv function %tmp.17 :_setAction;
+            %tmp.19 = "Profile FAIL:";
+            %tmp.20 = lgetv %status;
+            symbol [ status %tmp.20 70 45 51 ];
+            %tmp.21 = add %tmp.19 %tmp.20;
+            invoke %tmp.17 %tmp.18(%tmp.21);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_69_19_71_12_stop:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_67_12_71_12_if_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_65_113_72_8_stop:
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 74; @symbol_functiondef = [onScanStateChange,74,17,34]; @symbol_param<0> = [scanState,74,35,44]; @symbol_param<0>_type<0> = [BluetoothLowEnergy,74,48,66]; @symbol_param<0>_type<1> = [ScanState,74,67,76]; @symbol_param<1> = [status,74,78,84]; @symbol_param<1>_type<0> = [BluetoothLowEnergy,74,88,106]; @symbol_param<1>_type<1> = [Status,74,107,113]; ]
+        function onScanStateChange(scanState as BluetoothLowEnergy.ScanState, status as BluetoothLowEnergy.Status) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_74_123_81_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 75 12 ]
+            symbol [ System %tmp.1 75 12 18 ];
+            %tmp.1 = getm $.Toybox.System;
+            symbol [ println %tmp.2 75 19 26 ];
+            %tmp.2 = getv function %tmp.1 :println;
+            %tmp.3 = "[BLE] Scan state=";
+            %tmp.4 = lgetv %scanState;
+            symbol [ scanState %tmp.4 75 49 58 ];
+            %tmp.5 = add %tmp.3 %tmp.4;
+            %tmp.6 = " status=";
+            %tmp.7 = add %tmp.5 %tmp.6;
+            %tmp.8 = lgetv %status;
+            symbol [ status %tmp.8 75 74 80 ];
+            %tmp.9 = add %tmp.7 %tmp.8;
+            invoke %tmp.1 %tmp.2(%tmp.9);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 76 12 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_76_12_80_12_if_stmt:
+            %tmp.10 = lgetv %scanState;
+            symbol [ scanState %tmp.10 76 16 25 ];
+            symbol [ BluetoothLowEnergy %tmp.11 76 29 47 ];
+            %tmp.11 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ SCAN_STATE_SCANNING %tmp.12 76 48 67 ];
+            %tmp.12 = getv %tmp.11 :SCAN_STATE_SCANNING;
+            %tmp.13 = eq %tmp.10 %tmp.12;
+            bf %tmp.13 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_76_12_80_12_if_else_false;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_76_12_80_12_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_76_69_78_12_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 77 16 ]
+            %tmp.14 = self;
+            symbol [ _setStatus %tmp.15 77 16 26 ];
+            %tmp.15 = getv function %tmp.14 :_setStatus;
+            %tmp.16 = "Scanning...";
+            symbol [ Graphics %tmp.17 77 42 50 ];
+            %tmp.17 = getm $.Toybox.Graphics;
+            symbol [ COLOR_YELLOW %tmp.18 77 51 63 ];
+            %tmp.18 = getv %tmp.17 :COLOR_YELLOW;
+            invoke %tmp.14 %tmp.15(%tmp.16, %tmp.18);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_76_69_78_12_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_76_12_80_12_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_76_12_80_12_if_else_false:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_78_19_80_12_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 79 16 ]
+            %tmp.19 = self;
+            symbol [ _setStatus %tmp.20 79 16 26 ];
+            %tmp.20 = getv function %tmp.19 :_setStatus;
+            %tmp.21 = "Scan Off";
+            symbol [ Graphics %tmp.22 79 39 47 ];
+            %tmp.22 = getm $.Toybox.Graphics;
+            symbol [ COLOR_DK_GRAY %tmp.23 79 48 61 ];
+            %tmp.23 = getv %tmp.22 :COLOR_DK_GRAY;
+            invoke %tmp.19 %tmp.20(%tmp.21, %tmp.23);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_78_19_80_12_stop:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_76_12_80_12_if_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_74_123_81_8_stop:
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 83; @symbol_functiondef = [onScanResults,83,17,30]; @symbol_param<0> = [scanResults,83,31,42]; @symbol_param<0>_type<0> = [BluetoothLowEnergy,83,46,64]; @symbol_param<0>_type<1> = [Iterator,83,65,73]; ]
+        function onScanResults(scanResults as BluetoothLowEnergy.Iterator) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_83_83_118_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 84 12 ]
+            [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_83_83_118_8_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_83_83_118_8_stop" ]
+            %sr.1 = local;
+            symbol [ sr %sr.1 84 16 18 ];
+            %tmp.1 = null;
+            lputv %sr.1 %tmp.1;
+            symbol [ sr %sr.1 84 16 18 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 85 12 ]
+            while @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_12_117_12_while_test @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_12_117_12_while_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_12_117_12_while_test:
+            %tmp.2 = true;
+            bf %tmp.2 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_12_117_12_while_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_12_117_12_while_begin:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_25_117_12_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 86 16 ]
+            %tmp.3 = lgetv %scanResults;
+            symbol [ scanResults %tmp.3 86 21 32 ];
+            symbol [ next %tmp.4 86 33 37 ];
+            %tmp.4 = getv function %tmp.3 :next;
+            %tmp.5 = invoke %tmp.3 %tmp.4();
+            %tmp.6 = as %tmp.5 BluetoothLowEnergy.ScanResult or Null;
+            symbol [ BluetoothLowEnergy %tmp.6 86 43 61 ];
+            symbol [ ScanResult %tmp.6 86 62 72 ];
+            lputv %sr.1 %tmp.6;
+            symbol [ sr %sr.1 86 16 18 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 87 16 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_87_16_87_41_if_stmt:
+            %tmp.7 = lgetv %sr.1;
+            symbol [ sr %tmp.7 87 20 22 ];
+            %tmp.8 = null;
+            %tmp.9 = eq %tmp.7 %tmp.8;
+            bf %tmp.9 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_87_16_87_41_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_87_16_87_41_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_87_32_87_41_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 87 34 ]
+            goto break @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_12_117_12_while_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_87_32_87_41_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_87_16_87_41_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_87_16_87_41_if_end:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 89 16 ]
+            [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_25_117_12_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_25_117_12_stop" ]
+            %uuidsIter.2 = local;
+            symbol [ uuidsIter %uuidsIter.2 89 20 29 ];
+            %tmp.10 = lgetv %sr.1;
+            symbol [ sr %tmp.10 89 32 34 ];
+            symbol [ getServiceUuids %tmp.11 89 35 50 ];
+            %tmp.11 = getv function %tmp.10 :getServiceUuids;
+            %tmp.12 = invoke %tmp.10 %tmp.11();
+            lputv %uuidsIter.2 %tmp.12;
+            symbol [ uuidsIter %uuidsIter.2 89 20 29 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 90 16 ]
+            [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_25_117_12_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_25_117_12_stop" ]
+            %match.3 = local;
+            symbol [ match %match.3 90 20 25 ];
+            %tmp.13 = false;
+            lputv %match.3 %tmp.13;
+            symbol [ match %match.3 90 20 25 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 91 16 ]
+            [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_25_117_12_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_25_117_12_stop" ]
+            %u.4 = local;
+            symbol [ u %u.4 91 20 21 ];
+            %tmp.14 = null;
+            lputv %u.4 %tmp.14;
+            symbol [ u %u.4 91 20 21 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 93 16 ]
+            while @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_16_100_16_while_test @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_16_100_16_while_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_16_100_16_while_test:
+            %tmp.15 = true;
+            bf %tmp.15 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_16_100_16_while_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_16_100_16_while_begin:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_29_100_16_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 94 20 ]
+            %tmp.16 = lgetv %uuidsIter.2;
+            symbol [ uuidsIter %tmp.16 94 24 33 ];
+            symbol [ next %tmp.17 94 34 38 ];
+            %tmp.17 = getv function %tmp.16 :next;
+            %tmp.18 = invoke %tmp.16 %tmp.17();
+            %tmp.19 = as %tmp.18 BluetoothLowEnergy.Uuid or Null;
+            symbol [ BluetoothLowEnergy %tmp.19 94 44 62 ];
+            symbol [ Uuid %tmp.19 94 63 67 ];
+            lputv %u.4 %tmp.19;
+            symbol [ u %u.4 94 20 21 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 95 20 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_95_20_95_44_if_stmt:
+            %tmp.20 = lgetv %u.4;
+            symbol [ u %tmp.20 95 24 25 ];
+            %tmp.21 = null;
+            %tmp.22 = eq %tmp.20 %tmp.21;
+            bf %tmp.22 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_95_20_95_44_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_95_20_95_44_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_95_35_95_44_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 95 37 ]
+            goto break @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_16_100_16_while_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_95_35_95_44_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_95_20_95_44_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_95_20_95_44_if_end:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 96 20 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_96_20_99_20_if_stmt:
+            %tmp.23 = lgetv %u.4;
+            symbol [ u %tmp.23 96 24 25 ];
+            symbol [ equals %tmp.24 96 26 32 ];
+            %tmp.24 = getv function %tmp.23 :equals;
+            symbol [ LAMP_SERVICE_UUID %tmp.26 96 33 50 ];
+            %tmp.26 = getv ? :LAMP_SERVICE_UUID;
+            %tmp.27 = invoke %tmp.23 %tmp.24(%tmp.26);
+            bf %tmp.27 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_96_20_99_20_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_96_20_99_20_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_96_53_99_20_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 97 24 ]
+            %tmp.28 = true;
+            lputv %match.3 %tmp.28;
+            symbol [ match %match.3 97 24 29 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 98 24 ]
+            goto break @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_16_100_16_while_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_96_53_99_20_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_96_20_99_20_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_96_20_99_20_if_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_29_100_16_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_16_100_16_while_test;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_93_16_100_16_while_end:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 102 16 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_102_16_116_16_if_stmt:
+            %tmp.29 = lgetv %match.3;
+            symbol [ match %tmp.29 102 20 25 ];
+            bf %tmp.29 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_102_16_116_16_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_102_16_116_16_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_102_27_116_16_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 103 20 ]
+            symbol [ System %tmp.30 103 20 26 ];
+            %tmp.30 = getm $.Toybox.System;
+            symbol [ println %tmp.31 103 27 34 ];
+            %tmp.31 = getv function %tmp.30 :println;
+            %tmp.32 = "[BLE] Found ESP32: ";
+            %tmp.33 = lgetv %sr.1;
+            symbol [ sr %tmp.33 103 59 61 ];
+            symbol [ getDeviceName %tmp.34 103 62 75 ];
+            %tmp.34 = getv function %tmp.33 :getDeviceName;
+            %tmp.35 = invoke %tmp.33 %tmp.34();
+            %tmp.36 = add %tmp.32 %tmp.35;
+            invoke %tmp.30 %tmp.31(%tmp.36);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 104 20 ]
+            %tmp.37 = self;
+            symbol [ _setStatus %tmp.38 104 20 30 ];
+            %tmp.38 = getv function %tmp.37 :_setStatus;
+            %tmp.39 = "Found ESP32";
+            symbol [ Graphics %tmp.40 104 46 54 ];
+            %tmp.40 = getm $.Toybox.Graphics;
+            symbol [ COLOR_BLUE %tmp.41 104 55 65 ];
+            %tmp.41 = getv %tmp.40 :COLOR_BLUE;
+            invoke %tmp.37 %tmp.38(%tmp.39, %tmp.41);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 105 20 ]
+            %tmp.42 = self;
+            symbol [ _setAction %tmp.43 105 20 30 ];
+            %tmp.43 = getv function %tmp.42 :_setAction;
+            %tmp.44 = "Pairing...";
+            invoke %tmp.42 %tmp.43(%tmp.44);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 107 20 ]
+            symbol [ BluetoothLowEnergy %tmp.45 107 20 38 ];
+            %tmp.45 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ setScanState %tmp.46 107 39 51 ];
+            %tmp.46 = getv function %tmp.45 :setScanState;
+            symbol [ BluetoothLowEnergy %tmp.47 107 52 70 ];
+            %tmp.47 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ SCAN_STATE_OFF %tmp.48 107 71 85 ];
+            %tmp.48 = getv %tmp.47 :SCAN_STATE_OFF;
+            invoke %tmp.45 %tmp.46(%tmp.48);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 108 20 ]
+            try @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_beginTry @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_endTry @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_catch @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_finally;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_beginTry:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_24_110_20_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 109 24 ]
+            symbol [ BluetoothLowEnergy %tmp.49 109 34 52 ];
+            %tmp.49 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ pairDevice %tmp.50 109 53 63 ];
+            %tmp.50 = getv function %tmp.49 :pairDevice;
+            %tmp.51 = lgetv %sr.1;
+            symbol [ sr %tmp.51 109 64 66 ];
+            %tmp.52 = invoke %tmp.49 %tmp.50(%tmp.51);
+            symbol [ _device ? 109 24 31 ];
+            putv self :_device %tmp.52;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_24_110_20_stop:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_endTry:
+            jsr @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_finally;
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_catch:
+            %tmp.53 = exception;
+            push %tmp.53;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 110 22 ]
+            [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_catch" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_110_22_114_20_end" ]
+            %e.5 = local;
+            symbol [ e %e.5 110 29 30 ];
+            %tmp.54 = dup %tmp.53;
+            lputv %e.5 %tmp.54;
+            symbol [ e %e.5 110 29 30 ];
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_110_32_114_20_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 111 24 ]
+            symbol [ System %tmp.55 111 24 30 ];
+            %tmp.55 = getm $.Toybox.System;
+            symbol [ println %tmp.56 111 31 38 ];
+            %tmp.56 = getv function %tmp.55 :println;
+            %tmp.57 = "[BLE] pairDevice failed: ";
+            %tmp.58 = lgetv %e.5;
+            symbol [ e %tmp.58 111 69 70 ];
+            %tmp.59 = add %tmp.57 %tmp.58;
+            invoke %tmp.55 %tmp.56(%tmp.59);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 112 24 ]
+            %tmp.60 = self;
+            symbol [ _setStatus %tmp.61 112 24 34 ];
+            %tmp.61 = getv function %tmp.60 :_setStatus;
+            %tmp.62 = "Pair FAIL";
+            symbol [ Graphics %tmp.63 112 48 56 ];
+            %tmp.63 = getm $.Toybox.Graphics;
+            symbol [ COLOR_RED %tmp.64 112 57 66 ];
+            %tmp.64 = getv %tmp.63 :COLOR_RED;
+            invoke %tmp.60 %tmp.61(%tmp.62, %tmp.64);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 113 24 ]
+            %tmp.65 = self;
+            symbol [ _setAction %tmp.66 113 24 34 ];
+            %tmp.66 = getv function %tmp.65 :_setAction;
+            %tmp.67 = lgetv %e.5;
+            symbol [ e %tmp.67 113 35 36 ];
+            symbol [ getErrorMessage %tmp.68 113 37 52 ];
+            %tmp.68 = getv function %tmp.67 :getErrorMessage;
+            %tmp.69 = invoke %tmp.67 %tmp.68();
+            invoke %tmp.65 %tmp.66(%tmp.69);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_110_32_114_20_stop:
+            jsr @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_finally;
+            pop;
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_110_22_114_20_end:
+            try @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_catch @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_110_22_114_20_end @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_110_22_114_20_end @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_finally;
+            jsr @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_finally;
+            throw %tmp.53;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_finally:
+            jsrret;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_108_20_114_20_end:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 115 20 ]
+            goto break @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_12_117_12_while_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_102_27_116_16_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_102_16_116_16_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_102_16_116_16_if_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_25_117_12_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_12_117_12_while_test;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_85_12_117_12_while_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_83_83_118_8_stop:
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 120; @symbol_functiondef = [onConnectedStateChanged,120,17,40]; @symbol_param<0> = [dev,120,41,44]; @symbol_param<0>_type<0> = [BluetoothLowEnergy,120,48,66]; @symbol_param<0>_type<1> = [Device,120,67,73]; @symbol_param<1> = [state,120,75,80]; @symbol_param<1>_type<0> = [BluetoothLowEnergy,120,84,102]; @symbol_param<1>_type<1> = [ConnectionState,120,103,118]; ]
+        function onConnectedStateChanged(dev as BluetoothLowEnergy.Device, state as BluetoothLowEnergy.ConnectionState) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_120_128_175_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 121 12 ]
+            symbol [ System %tmp.1 121 12 18 ];
+            %tmp.1 = getm $.Toybox.System;
+            symbol [ println %tmp.2 121 19 26 ];
+            %tmp.2 = getv function %tmp.1 :println;
+            %tmp.3 = "[BLE] Connection state: ";
+            %tmp.4 = lgetv %state;
+            symbol [ state %tmp.4 121 56 61 ];
+            %tmp.5 = add %tmp.3 %tmp.4;
+            invoke %tmp.1 %tmp.2(%tmp.5);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 123 12 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_123_12_174_12_if_stmt:
+            %tmp.6 = lgetv %state;
+            symbol [ state %tmp.6 123 16 21 ];
+            symbol [ BluetoothLowEnergy %tmp.7 123 25 43 ];
+            %tmp.7 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ CONNECTION_STATE_CONNECTED %tmp.8 123 44 70 ];
+            %tmp.8 = getv %tmp.7 :CONNECTION_STATE_CONNECTED;
+            %tmp.9 = eq %tmp.6 %tmp.8;
+            bf %tmp.9 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_123_12_174_12_if_false;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_123_12_174_12_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_123_72_164_12_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 124 16 ]
+            %tmp.10 = lgetv %dev;
+            symbol [ dev %tmp.10 124 26 29 ];
+            symbol [ _device ? 124 16 23 ];
+            putv self :_device %tmp.10;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 125 16 ]
+            %tmp.11 = self;
+            symbol [ _setStatus %tmp.12 125 16 26 ];
+            %tmp.12 = getv function %tmp.11 :_setStatus;
+            %tmp.13 = "Connected!";
+            symbol [ Graphics %tmp.14 125 41 49 ];
+            %tmp.14 = getm $.Toybox.Graphics;
+            symbol [ COLOR_GREEN %tmp.15 125 50 61 ];
+            %tmp.15 = getv %tmp.14 :COLOR_GREEN;
+            invoke %tmp.11 %tmp.12(%tmp.13, %tmp.15);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 126 16 ]
+            %tmp.16 = self;
+            symbol [ _setAction %tmp.17 126 16 26 ];
+            %tmp.17 = getv function %tmp.16 :_setAction;
+            %tmp.18 = "Getting service...";
+            invoke %tmp.16 %tmp.17(%tmp.18);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 129 16 ]
+            %tmp.19 = lgetv %dev;
+            symbol [ dev %tmp.19 129 27 30 ];
+            symbol [ getService %tmp.20 129 31 41 ];
+            %tmp.20 = getv function %tmp.19 :getService;
+            symbol [ LAMP_SERVICE_UUID %tmp.22 129 42 59 ];
+            %tmp.22 = getv ? :LAMP_SERVICE_UUID;
+            %tmp.23 = invoke %tmp.19 %tmp.20(%tmp.22);
+            symbol [ _service ? 129 16 24 ];
+            putv self :_service %tmp.23;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 130 16 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_130_16_135_16_if_stmt:
+            symbol [ _service %tmp.25 130 20 28 ];
+            %tmp.25 = getv ? :_service;
+            %tmp.26 = null;
+            %tmp.27 = eq %tmp.25 %tmp.26;
+            bf %tmp.27 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_130_16_135_16_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_130_16_135_16_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_130_38_135_16_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 131 20 ]
+            %tmp.28 = self;
+            symbol [ _setStatus %tmp.29 131 20 30 ];
+            %tmp.29 = getv function %tmp.28 :_setStatus;
+            %tmp.30 = "Svc NULL!";
+            symbol [ Graphics %tmp.31 131 44 52 ];
+            %tmp.31 = getm $.Toybox.Graphics;
+            symbol [ COLOR_RED %tmp.32 131 53 62 ];
+            %tmp.32 = getv %tmp.31 :COLOR_RED;
+            invoke %tmp.28 %tmp.29(%tmp.30, %tmp.32);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 132 20 ]
+            %tmp.33 = self;
+            symbol [ _setAction %tmp.34 132 20 30 ];
+            %tmp.34 = getv function %tmp.33 :_setAction;
+            %tmp.35 = "UUID mismatch?";
+            invoke %tmp.33 %tmp.34(%tmp.35);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 133 20 ]
+            symbol [ System %tmp.36 133 20 26 ];
+            %tmp.36 = getm $.Toybox.System;
+            symbol [ println %tmp.37 133 27 34 ];
+            %tmp.37 = getv function %tmp.36 :println;
+            %tmp.38 = "[BLE] ERROR: Service is NULL";
+            invoke %tmp.36 %tmp.37(%tmp.38);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 134 20 ]
+            ret ?;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_130_38_135_16_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_130_16_135_16_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_130_16_135_16_if_end:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 136 16 ]
+            %tmp.39 = self;
+            symbol [ _setAction %tmp.40 136 16 26 ];
+            %tmp.40 = getv function %tmp.39 :_setAction;
+            %tmp.41 = "Svc OK - getting char...";
+            invoke %tmp.39 %tmp.40(%tmp.41);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 137 16 ]
+            symbol [ System %tmp.42 137 16 22 ];
+            %tmp.42 = getm $.Toybox.System;
+            symbol [ println %tmp.43 137 23 30 ];
+            %tmp.43 = getv function %tmp.42 :println;
+            %tmp.44 = "[BLE] Service found OK";
+            invoke %tmp.42 %tmp.43(%tmp.44);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 140 16 ]
+            symbol [ _service %tmp.46 140 28 36 ];
+            %tmp.46 = getv ? :_service;
+            symbol [ getCharacteristic %tmp.47 140 37 54 ];
+            %tmp.47 = getv function %tmp.46 :getCharacteristic;
+            symbol [ LAMP_CHAR_UUID %tmp.49 140 55 69 ];
+            %tmp.49 = getv ? :LAMP_CHAR_UUID;
+            %tmp.50 = invoke %tmp.46 %tmp.47(%tmp.49);
+            symbol [ _charLamp ? 140 16 25 ];
+            putv self :_charLamp %tmp.50;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 141 16 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_141_16_146_16_if_stmt:
+            symbol [ _charLamp %tmp.52 141 20 29 ];
+            %tmp.52 = getv ? :_charLamp;
+            %tmp.53 = null;
+            %tmp.54 = eq %tmp.52 %tmp.53;
+            bf %tmp.54 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_141_16_146_16_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_141_16_146_16_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_141_39_146_16_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 142 20 ]
+            %tmp.55 = self;
+            symbol [ _setStatus %tmp.56 142 20 30 ];
+            %tmp.56 = getv function %tmp.55 :_setStatus;
+            %tmp.57 = "Char NULL!";
+            symbol [ Graphics %tmp.58 142 45 53 ];
+            %tmp.58 = getm $.Toybox.Graphics;
+            symbol [ COLOR_RED %tmp.59 142 54 63 ];
+            %tmp.59 = getv %tmp.58 :COLOR_RED;
+            invoke %tmp.55 %tmp.56(%tmp.57, %tmp.59);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 143 20 ]
+            %tmp.60 = self;
+            symbol [ _setAction %tmp.61 143 20 30 ];
+            %tmp.61 = getv function %tmp.60 :_setAction;
+            %tmp.62 = "Char not found";
+            invoke %tmp.60 %tmp.61(%tmp.62);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 144 20 ]
+            symbol [ System %tmp.63 144 20 26 ];
+            %tmp.63 = getm $.Toybox.System;
+            symbol [ println %tmp.64 144 27 34 ];
+            %tmp.64 = getv function %tmp.63 :println;
+            %tmp.65 = "[BLE] ERROR: Characteristic is NULL";
+            invoke %tmp.63 %tmp.64(%tmp.65);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 145 20 ]
+            ret ?;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_141_39_146_16_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_141_16_146_16_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_141_16_146_16_if_end:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 147 16 ]
+            %tmp.66 = self;
+            symbol [ _setStatus %tmp.67 147 16 26 ];
+            %tmp.67 = getv function %tmp.66 :_setStatus;
+            %tmp.68 = "Char Ready!";
+            symbol [ Graphics %tmp.69 147 42 50 ];
+            %tmp.69 = getm $.Toybox.Graphics;
+            symbol [ COLOR_GREEN %tmp.70 147 51 62 ];
+            %tmp.70 = getv %tmp.69 :COLOR_GREEN;
+            invoke %tmp.66 %tmp.67(%tmp.68, %tmp.70);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 148 16 ]
+            %tmp.71 = self;
+            symbol [ _setAction %tmp.72 148 16 26 ];
+            %tmp.72 = getv function %tmp.71 :_setAction;
+            %tmp.73 = "Press SET to send";
+            invoke %tmp.71 %tmp.72(%tmp.73);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 149 16 ]
+            symbol [ System %tmp.74 149 16 22 ];
+            %tmp.74 = getm $.Toybox.System;
+            symbol [ println %tmp.75 149 23 30 ];
+            %tmp.75 = getv function %tmp.74 :println;
+            %tmp.76 = "[BLE] Characteristic found OK - ready!";
+            invoke %tmp.74 %tmp.75(%tmp.76);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 152 16 ]
+            [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_123_72_164_12_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_123_72_164_12_stop" ]
+            %cccd.1 = local;
+            symbol [ cccd %cccd.1 152 20 24 ];
+            symbol [ _charLamp %tmp.78 152 27 36 ];
+            %tmp.78 = getv ? :_charLamp;
+            symbol [ getDescriptor %tmp.79 152 37 50 ];
+            %tmp.79 = getv function %tmp.78 :getDescriptor;
+            symbol [ BluetoothLowEnergy %tmp.80 152 51 69 ];
+            %tmp.80 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ cccdUuid %tmp.81 152 70 78 ];
+            %tmp.81 = getv function %tmp.80 :cccdUuid;
+            %tmp.82 = invoke %tmp.80 %tmp.81();
+            %tmp.83 = invoke %tmp.78 %tmp.79(%tmp.82);
+            lputv %cccd.1 %tmp.83;
+            symbol [ cccd %cccd.1 152 20 24 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 153 16 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_153_16_162_16_if_stmt:
+            %tmp.84 = lgetv %cccd.1;
+            symbol [ cccd %tmp.84 153 20 24 ];
+            %tmp.85 = null;
+            %tmp.86 = ne %tmp.84 %tmp.85;
+            bf %tmp.86 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_153_16_162_16_if_else_false;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_153_16_162_16_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_153_34_160_16_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 154 20 ]
+            try @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_beginTry @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_endTry @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_catch @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_finally;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_beginTry:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_24_157_20_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 155 24 ]
+            %tmp.87 = lgetv %cccd.1;
+            symbol [ cccd %tmp.87 155 24 28 ];
+            %tmp.88 = as %tmp.87 { (!Null) };
+            symbol [ requestWrite %tmp.89 155 29 41 ];
+            %tmp.89 = getv function %tmp.88 :requestWrite;
+            %tmp.90 = newba 2;
+            %tmp.91 = 0x01;
+            %tmp.92 = dup %tmp.90;
+            %tmp.93 = aputv %tmp.92 0 %tmp.91;
+            %tmp.94 = 0x00;
+            %tmp.95 = dup %tmp.93;
+            %tmp.96 = aputv %tmp.95 1 %tmp.94;
+            invoke %tmp.88 %tmp.89(%tmp.96);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 156 24 ]
+            symbol [ System %tmp.97 156 24 30 ];
+            %tmp.97 = getm $.Toybox.System;
+            symbol [ println %tmp.98 156 31 38 ];
+            %tmp.98 = getv function %tmp.97 :println;
+            %tmp.99 = "[BLE] Notifications enabled";
+            invoke %tmp.97 %tmp.98(%tmp.99);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_24_157_20_stop:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_endTry:
+            jsr @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_finally;
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_catch:
+            %tmp.100 = exception;
+            push %tmp.100;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 157 22 ]
+            [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_catch" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_157_22_159_20_end" ]
+            %e.2 = local;
+            symbol [ e %e.2 157 29 30 ];
+            %tmp.101 = dup %tmp.100;
+            lputv %e.2 %tmp.101;
+            symbol [ e %e.2 157 29 30 ];
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_157_32_159_20_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 158 24 ]
+            symbol [ System %tmp.102 158 24 30 ];
+            %tmp.102 = getm $.Toybox.System;
+            symbol [ println %tmp.103 158 31 38 ];
+            %tmp.103 = getv function %tmp.102 :println;
+            %tmp.104 = "[BLE] CCCD write failed: ";
+            %tmp.105 = lgetv %e.2;
+            symbol [ e %tmp.105 158 69 70 ];
+            %tmp.106 = add %tmp.104 %tmp.105;
+            invoke %tmp.102 %tmp.103(%tmp.106);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_157_32_159_20_stop:
+            jsr @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_finally;
+            pop;
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_157_22_159_20_end:
+            try @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_catch @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_157_22_159_20_end @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_157_22_159_20_end @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_finally;
+            jsr @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_finally;
+            throw %tmp.100;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_finally:
+            jsrret;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_154_20_159_20_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_153_34_160_16_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_153_16_162_16_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_153_16_162_16_if_else_false:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_160_23_162_16_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 161 20 ]
+            symbol [ System %tmp.107 161 20 26 ];
+            %tmp.107 = getm $.Toybox.System;
+            symbol [ println %tmp.108 161 27 34 ];
+            %tmp.108 = getv function %tmp.107 :println;
+            %tmp.109 = "[BLE] No CCCD - notifications not available";
+            invoke %tmp.107 %tmp.108(%tmp.109);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_160_23_162_16_stop:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_153_16_162_16_if_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_123_72_164_12_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_123_12_174_12_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_123_12_174_12_if_false:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 164 19 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_164_19_174_12_if_stmt:
+            %tmp.110 = lgetv %state;
+            symbol [ state %tmp.110 164 23 28 ];
+            symbol [ BluetoothLowEnergy %tmp.111 164 32 50 ];
+            %tmp.111 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ CONNECTION_STATE_DISCONNECTED %tmp.112 164 51 80 ];
+            %tmp.112 = getv %tmp.111 :CONNECTION_STATE_DISCONNECTED;
+            %tmp.113 = eq %tmp.110 %tmp.112;
+            bf %tmp.113 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_164_19_174_12_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_164_19_174_12_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_164_82_174_12_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 165 16 ]
+            symbol [ System %tmp.114 165 16 22 ];
+            %tmp.114 = getm $.Toybox.System;
+            symbol [ println %tmp.115 165 23 30 ];
+            %tmp.115 = getv function %tmp.114 :println;
+            %tmp.116 = "[BLE] Disconnected";
+            invoke %tmp.114 %tmp.115(%tmp.116);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 166 16 ]
+            %tmp.117 = null;
+            symbol [ _device ? 166 16 23 ];
+            putv self :_device %tmp.117;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 167 16 ]
+            %tmp.118 = null;
+            symbol [ _service ? 167 16 24 ];
+            putv self :_service %tmp.118;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 168 16 ]
+            %tmp.119 = null;
+            symbol [ _charLamp ? 168 16 25 ];
+            putv self :_charLamp %tmp.119;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 169 16 ]
+            %tmp.120 = self;
+            symbol [ _setStatus %tmp.121 169 16 26 ];
+            %tmp.121 = getv function %tmp.120 :_setStatus;
+            %tmp.122 = "Disconnected";
+            symbol [ Graphics %tmp.123 169 43 51 ];
+            %tmp.123 = getm $.Toybox.Graphics;
+            symbol [ COLOR_RED %tmp.124 169 52 61 ];
+            %tmp.124 = getv %tmp.123 :COLOR_RED;
+            invoke %tmp.120 %tmp.121(%tmp.122, %tmp.124);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 170 16 ]
+            %tmp.125 = self;
+            symbol [ _setAction %tmp.126 170 16 26 ];
+            %tmp.126 = getv function %tmp.125 :_setAction;
+            %tmp.127 = "Restarting scan...";
+            invoke %tmp.125 %tmp.126(%tmp.127);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 173 16 ]
+            symbol [ BluetoothLowEnergy %tmp.128 173 16 34 ];
+            %tmp.128 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ setScanState %tmp.129 173 35 47 ];
+            %tmp.129 = getv function %tmp.128 :setScanState;
+            symbol [ BluetoothLowEnergy %tmp.130 173 48 66 ];
+            %tmp.130 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ SCAN_STATE_SCANNING %tmp.131 173 67 86 ];
+            %tmp.131 = getv %tmp.130 :SCAN_STATE_SCANNING;
+            invoke %tmp.128 %tmp.129(%tmp.131);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_164_82_174_12_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_164_19_174_12_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_164_19_174_12_if_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_123_12_174_12_if_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_120_128_175_8_stop:
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 177; @symbol_functiondef = [onEncryptionStatus,177,17,35]; @symbol_param<0> = [dev,177,36,39]; @symbol_param<0>_type<0> = [BluetoothLowEnergy,177,43,61]; @symbol_param<0>_type<1> = [Device,177,62,68]; @symbol_param<1> = [status,177,70,76]; @symbol_param<1>_type<0> = [BluetoothLowEnergy,177,80,98]; @symbol_param<1>_type<1> = [Status,177,99,105]; ]
+        function onEncryptionStatus(dev as BluetoothLowEnergy.Device, status as BluetoothLowEnergy.Status) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_177_115_179_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 178 12 ]
+            symbol [ System %tmp.1 178 12 18 ];
+            %tmp.1 = getm $.Toybox.System;
+            symbol [ println %tmp.2 178 19 26 ];
+            %tmp.2 = getv function %tmp.1 :println;
+            %tmp.3 = "[BLE] Encryption status: ";
+            %tmp.4 = lgetv %status;
+            symbol [ status %tmp.4 178 57 63 ];
+            %tmp.5 = add %tmp.3 %tmp.4;
+            invoke %tmp.1 %tmp.2(%tmp.5);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_177_115_179_8_stop:
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 181; @symbol_functiondef = [onCharacteristicWrite,181,17,38]; @symbol_param<0> = [ch,181,39,41]; @symbol_param<0>_type<0> = [BluetoothLowEnergy,181,45,63]; @symbol_param<0>_type<1> = [Characteristic,181,64,78]; @symbol_param<1> = [status,181,80,86]; @symbol_param<1>_type<0> = [BluetoothLowEnergy,181,90,108]; @symbol_param<1>_type<1> = [Status,181,109,115]; ]
+        function onCharacteristicWrite(ch as BluetoothLowEnergy.Characteristic, status as BluetoothLowEnergy.Status) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_181_125_188_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 182 12 ]
+            symbol [ System %tmp.1 182 12 18 ];
+            %tmp.1 = getm $.Toybox.System;
+            symbol [ println %tmp.2 182 19 26 ];
+            %tmp.2 = getv function %tmp.1 :println;
+            %tmp.3 = "[BLE] Write complete: status=";
+            %tmp.4 = lgetv %status;
+            symbol [ status %tmp.4 182 61 67 ];
+            %tmp.5 = add %tmp.3 %tmp.4;
+            invoke %tmp.1 %tmp.2(%tmp.5);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 183 12 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_183_12_187_12_if_stmt:
+            %tmp.6 = lgetv %status;
+            symbol [ status %tmp.6 183 16 22 ];
+            symbol [ BluetoothLowEnergy %tmp.7 183 26 44 ];
+            %tmp.7 = getm $.Toybox.BluetoothLowEnergy;
+            symbol [ STATUS_SUCCESS %tmp.8 183 45 59 ];
+            %tmp.8 = getv %tmp.7 :STATUS_SUCCESS;
+            %tmp.9 = eq %tmp.6 %tmp.8;
+            bf %tmp.9 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_183_12_187_12_if_else_false;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_183_12_187_12_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_183_61_185_12_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 184 16 ]
+            %tmp.10 = self;
+            symbol [ _setAction %tmp.11 184 16 26 ];
+            %tmp.11 = getv function %tmp.10 :_setAction;
+            %tmp.12 = "Write OK!";
+            invoke %tmp.10 %tmp.11(%tmp.12);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_183_61_185_12_stop:
+            goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_183_12_187_12_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_183_12_187_12_if_else_false:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_185_19_187_12_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 186 16 ]
+            %tmp.13 = self;
+            symbol [ _setAction %tmp.14 186 16 26 ];
+            %tmp.14 = getv function %tmp.13 :_setAction;
+            %tmp.15 = "Write FAIL:";
+            %tmp.16 = lgetv %status;
+            symbol [ status %tmp.16 186 43 49 ];
+            %tmp.17 = add %tmp.15 %tmp.16;
+            invoke %tmp.13 %tmp.14(%tmp.17);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_185_19_187_12_stop:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_183_12_187_12_if_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_181_125_188_8_stop:
+        }
+        [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 190; @symbol_functiondef = [onCharacteristicChanged,190,17,40]; @symbol_param<0> = [ch,190,41,43]; @symbol_param<0>_type<0> = [BluetoothLowEnergy,190,47,65]; @symbol_param<0>_type<1> = [Characteristic,190,66,80]; @symbol_param<1> = [value,190,82,87]; @symbol_param<1>_type<0> = [Lang,190,91,95]; @symbol_param<1>_type<1> = [ByteArray,190,96,105]; ]
+        function onCharacteristicChanged(ch as BluetoothLowEnergy.Characteristic, value as Lang.ByteArray) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_190_115_192_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 191 12 ]
+            symbol [ System %tmp.1 191 12 18 ];
+            %tmp.1 = getm $.Toybox.System;
+            symbol [ println %tmp.2 191 19 26 ];
+            %tmp.2 = getv function %tmp.1 :println;
+            %tmp.3 = "[BLE] Notified value: ";
+            %tmp.4 = lgetv %value;
+            symbol [ value %tmp.4 191 54 59 ];
+            %tmp.5 = add %tmp.3 %tmp.4;
+            invoke %tmp.1 %tmp.2(%tmp.5);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_190_115_192_8_stop:
+        }
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 198; @symbol_functiondef = [initAndScan,198,13,24]; ]
+    function initAndScan() as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_198_35_213_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 199 8 ]
+        %tmp.1 = self;
+        symbol [ _setStatus %tmp.2 199 8 18 ];
+        %tmp.2 = getv function %tmp.1 :_setStatus;
+        %tmp.3 = "Scanning...";
+        symbol [ Graphics %tmp.4 199 34 42 ];
+        %tmp.4 = getm $.Toybox.Graphics;
+        symbol [ COLOR_YELLOW %tmp.5 199 43 55 ];
+        %tmp.5 = getv %tmp.4 :COLOR_YELLOW;
+        invoke %tmp.1 %tmp.2(%tmp.3, %tmp.5);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 200 8 ]
+        %tmp.6 = self;
+        symbol [ _setAction %tmp.7 200 8 18 ];
+        %tmp.7 = getv function %tmp.6 :_setAction;
+        %tmp.8 = "Starting BLE...";
+        invoke %tmp.6 %tmp.7(%tmp.8);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 202 8 ]
+        symbol [ BluetoothLowEnergy %tmp.9 202 8 26 ];
+        %tmp.9 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ setDelegate %tmp.10 202 27 38 ];
+        %tmp.10 = getv function %tmp.9 :setDelegate;
+        symbol [ Delegate %tmp.14 202 43 51 ];
+        %tmp.14 = getv ? :Delegate;
+        %tmp.11 = newc %tmp.14 ();
+        invoke %tmp.9 %tmp.10(%tmp.11);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 204 8 ]
+        [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_198_35_213_4_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_198_35_213_4_stop" ]
+        %profile.1 = local;
+        symbol [ profile %profile.1 204 12 19 ];
+        %tmp.15 = newd 2;
+        %tmp.17 = const :uuid;
+        symbol [ uuid %tmp.17 205 13 17 const ];
+        symbol [ LAMP_SERVICE_UUID %tmp.19 205 21 38 ];
+        %tmp.19 = getv ? :LAMP_SERVICE_UUID;
+        %tmp.20 = dup %tmp.15;
+        %tmp.21 = aputv %tmp.20 %tmp.17 %tmp.19;
+        %tmp.23 = const :characteristics;
+        symbol [ characteristics %tmp.23 206 13 28 const ];
+        %tmp.24 = newa 1;
+        %tmp.25 = newd 2;
+        %tmp.27 = const :uuid;
+        symbol [ uuid %tmp.27 207 19 23 const ];
+        symbol [ LAMP_CHAR_UUID %tmp.29 207 27 41 ];
+        %tmp.29 = getv ? :LAMP_CHAR_UUID;
+        %tmp.30 = dup %tmp.25;
+        %tmp.31 = aputv %tmp.30 %tmp.27 %tmp.29;
+        %tmp.33 = const :descriptors;
+        symbol [ descriptors %tmp.33 207 44 55 const ];
+        %tmp.34 = newa 0;
+        %tmp.35 = dup %tmp.31;
+        %tmp.36 = aputv %tmp.35 %tmp.33 %tmp.34;
+        %tmp.37 = dup %tmp.24;
+        %tmp.38 = aputv %tmp.37 0 %tmp.36;
+        %tmp.39 = dup %tmp.21;
+        %tmp.40 = aputv %tmp.39 %tmp.23 %tmp.38;
+        lputv %profile.1 %tmp.40;
+        symbol [ profile %profile.1 204 12 19 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 211 8 ]
+        symbol [ BluetoothLowEnergy %tmp.41 211 8 26 ];
+        %tmp.41 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ registerProfile %tmp.42 211 27 42 ];
+        %tmp.42 = getv function %tmp.41 :registerProfile;
+        %tmp.43 = lgetv %profile.1;
+        symbol [ profile %tmp.43 211 43 50 ];
+        invoke %tmp.41 %tmp.42(%tmp.43);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 212 8 ]
+        symbol [ BluetoothLowEnergy %tmp.44 212 8 26 ];
+        %tmp.44 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ setScanState %tmp.45 212 27 39 ];
+        %tmp.45 = getv function %tmp.44 :setScanState;
+        symbol [ BluetoothLowEnergy %tmp.46 212 40 58 ];
+        %tmp.46 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ SCAN_STATE_SCANNING %tmp.47 212 59 78 ];
+        %tmp.47 = getv %tmp.46 :SCAN_STATE_SCANNING;
+        invoke %tmp.44 %tmp.45(%tmp.47);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_198_35_213_4_stop:
+    }
+    [ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 218; @symbol_functiondef = [sendLampState,218,13,26]; @symbol_param<0> = [on,218,27,29]; @symbol_param<0>_type<0> = [Lang,218,33,37]; @symbol_param<0>_type<1> = [Boolean,218,38,45]; ]
+    function sendLampState(on as Lang.Boolean) as Void {
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_218_55_243_4_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 219 8 ]
+        symbol [ System %tmp.1 219 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 219 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "[BLE] sendLampState called on=";
+        %tmp.4 = lgetv %on;
+        symbol [ on %tmp.4 219 58 60 ];
+        %tmp.5 = add %tmp.3 %tmp.4;
+        %tmp.6 = " charReady=";
+        %tmp.7 = add %tmp.5 %tmp.6;
+        symbol [ _charLamp %tmp.9 219 80 89 ];
+        %tmp.9 = getv ? :_charLamp;
+        %tmp.10 = null;
+        %tmp.11 = ne %tmp.9 %tmp.10;
+        %tmp.12 = add %tmp.7 %tmp.11;
+        invoke %tmp.1 %tmp.2(%tmp.12);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 221 8 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_221_8_226_8_if_stmt:
+        symbol [ _charLamp %tmp.14 221 12 21 ];
+        %tmp.14 = getv ? :_charLamp;
+        %tmp.15 = null;
+        %tmp.16 = eq %tmp.14 %tmp.15;
+        bf %tmp.16 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_221_8_226_8_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_221_8_226_8_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_221_31_226_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 222 12 ]
+        %tmp.17 = self;
+        symbol [ _setStatus %tmp.18 222 12 22 ];
+        %tmp.18 = getv function %tmp.17 :_setStatus;
+        %tmp.19 = "Char NULL!";
+        symbol [ Graphics %tmp.20 222 37 45 ];
+        %tmp.20 = getm $.Toybox.Graphics;
+        symbol [ COLOR_RED %tmp.21 222 46 55 ];
+        %tmp.21 = getv %tmp.20 :COLOR_RED;
+        invoke %tmp.17 %tmp.18(%tmp.19, %tmp.21);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 223 12 ]
+        %tmp.22 = self;
+        symbol [ _setAction %tmp.23 223 12 22 ];
+        %tmp.23 = getv function %tmp.22 :_setAction;
+        %tmp.24 = "Not ready yet";
+        invoke %tmp.22 %tmp.23(%tmp.24);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 224 12 ]
+        symbol [ System %tmp.25 224 12 18 ];
+        %tmp.25 = getm $.Toybox.System;
+        symbol [ println %tmp.26 224 19 26 ];
+        %tmp.26 = getv function %tmp.25 :println;
+        %tmp.27 = "[BLE] Lamp characteristic not ready.";
+        invoke %tmp.25 %tmp.26(%tmp.27);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 225 12 ]
+        ret ?;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_221_31_226_8_stop:
+        goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_221_8_226_8_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_221_8_226_8_if_end:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 228 8 ]
+        [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_218_55_243_4_start" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_218_55_243_4_stop" ]
+        %payload.1 = local;
+        symbol [ payload %payload.1 228 12 19 ];
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_228_22_228_42_begin:
+        %tmp.28 = lgetv %on;
+        symbol [ on %tmp.28 228 22 24 ];
+        bf %tmp.28 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_228_22_228_42_else_false;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_228_22_228_42_true:
+        %tmp.29 = newba 1;
+        %tmp.30 = 0x01;
+        %tmp.31 = dup %tmp.29;
+        %tmp.32 = aputv %tmp.31 0 %tmp.30;
+        push %tmp.32;
+        goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_228_22_228_42_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_228_22_228_42_else_false:
+        %tmp.33 = newba 1;
+        %tmp.34 = 0x00;
+        %tmp.35 = dup %tmp.33;
+        %tmp.36 = aputv %tmp.35 0 %tmp.34;
+        push %tmp.36;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_228_22_228_42_end:
+        %tmp.37 = phi [%tmp.28 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_228_22_228_42_begin] [%tmp.32 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_228_22_228_42_true] [%tmp.36 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_228_22_228_42_else_false] [%tmp.37 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_228_22_228_42_end];
+        lputv %payload.1 %tmp.37;
+        symbol [ payload %payload.1 228 12 19 ];
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 229 8 ]
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_229_8_233_8_if_stmt:
+        %tmp.38 = lgetv %on;
+        symbol [ on %tmp.38 229 12 14 ];
+        bf %tmp.38 @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_229_8_233_8_if_else_false;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_229_8_233_8_if_true:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_229_16_231_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 230 12 ]
+        %tmp.39 = self;
+        symbol [ _setAction %tmp.40 230 12 22 ];
+        %tmp.40 = getv function %tmp.39 :_setAction;
+        %tmp.41 = "Sending ON...";
+        invoke %tmp.39 %tmp.40(%tmp.41);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_229_16_231_8_stop:
+        goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_229_8_233_8_if_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_229_8_233_8_if_else_false:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_231_15_233_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 232 12 ]
+        %tmp.42 = self;
+        symbol [ _setAction %tmp.43 232 12 22 ];
+        %tmp.43 = getv function %tmp.42 :_setAction;
+        %tmp.44 = "Sending OFF...";
+        invoke %tmp.42 %tmp.43(%tmp.44);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_231_15_233_8_stop:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_229_8_233_8_if_end:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 235 8 ]
+        try @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_beginTry @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_endTry @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_catch @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_finally;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_beginTry:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_12_238_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 236 12 ]
+        symbol [ _charLamp %tmp.46 236 12 21 ];
+        %tmp.46 = getv ? :_charLamp;
+        symbol [ requestWrite %tmp.47 236 22 34 ];
+        %tmp.47 = getv function %tmp.46 :requestWrite;
+        %tmp.48 = lgetv %payload.1;
+        symbol [ payload %tmp.48 236 35 42 ];
+        %tmp.49 = newd 1;
+        %tmp.51 = const :writeType;
+        symbol [ writeType %tmp.51 236 47 56 const ];
+        symbol [ BluetoothLowEnergy %tmp.52 236 60 78 ];
+        %tmp.52 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ WRITE_TYPE_WITH_RESPONSE %tmp.53 236 79 103 ];
+        %tmp.53 = getv %tmp.52 :WRITE_TYPE_WITH_RESPONSE;
+        %tmp.54 = dup %tmp.49;
+        %tmp.55 = aputv %tmp.54 %tmp.51 %tmp.53;
+        invoke %tmp.46 %tmp.47(%tmp.48, %tmp.55);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 237 12 ]
+        symbol [ System %tmp.56 237 12 18 ];
+        %tmp.56 = getm $.Toybox.System;
+        symbol [ println %tmp.57 237 19 26 ];
+        %tmp.57 = getv function %tmp.56 :println;
+        %tmp.58 = "[BLE] requestWrite sent!";
+        invoke %tmp.56 %tmp.57(%tmp.58);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_12_238_8_stop:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_endTry:
+        jsr @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_finally;
+        goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_catch:
+        %tmp.59 = exception;
+        push %tmp.59;
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 238 10 ]
+        [ "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_catch" "_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_238_10_242_8_end" ]
+        %e.2 = local;
+        symbol [ e %e.2 238 17 18 ];
+        %tmp.60 = dup %tmp.59;
+        lputv %e.2 %tmp.60;
+        symbol [ e %e.2 238 17 18 ];
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_238_20_242_8_start:
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 239 12 ]
+        symbol [ System %tmp.61 239 12 18 ];
+        %tmp.61 = getm $.Toybox.System;
+        symbol [ println %tmp.62 239 19 26 ];
+        %tmp.62 = getv function %tmp.61 :println;
+        %tmp.63 = "[BLE] requestWrite failed: ";
+        %tmp.64 = lgetv %e.2;
+        symbol [ e %tmp.64 239 59 60 ];
+        %tmp.65 = add %tmp.63 %tmp.64;
+        invoke %tmp.61 %tmp.62(%tmp.65);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 240 12 ]
+        %tmp.66 = self;
+        symbol [ _setStatus %tmp.67 240 12 22 ];
+        %tmp.67 = getv function %tmp.66 :_setStatus;
+        %tmp.68 = "Send FAIL";
+        symbol [ Graphics %tmp.69 240 36 44 ];
+        %tmp.69 = getm $.Toybox.Graphics;
+        symbol [ COLOR_RED %tmp.70 240 45 54 ];
+        %tmp.70 = getv %tmp.69 :COLOR_RED;
+        invoke %tmp.66 %tmp.67(%tmp.68, %tmp.70);
+[ "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc" 241 12 ]
+        %tmp.71 = self;
+        symbol [ _setAction %tmp.72 241 12 22 ];
+        %tmp.72 = getv function %tmp.71 :_setAction;
+        %tmp.73 = lgetv %e.2;
+        symbol [ e %tmp.73 241 23 24 ];
+        symbol [ getErrorMessage %tmp.74 241 25 40 ];
+        %tmp.74 = getv function %tmp.73 :getErrorMessage;
+        %tmp.75 = invoke %tmp.73 %tmp.74();
+        invoke %tmp.71 %tmp.72(%tmp.75);
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_238_20_242_8_stop:
+        jsr @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_finally;
+        pop;
+        goto @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_end;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_238_10_242_8_end:
+        try @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_catch @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_238_10_242_8_end @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_238_10_242_8_end @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_finally;
+        jsr @_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_finally;
+        throw %tmp.59;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_finally:
+        jsrret;
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_235_8_242_8_end:
+_Users_Brysonzdeck_Documents_PlatformIO_Projects_lamp_automation_v1_Button_Press_source_Ble2Manager_mc_218_55_243_4_stop:
+    }
+}
+[ @file = "/Users/Brysonzdeck/Documents/PlatformIO/Projects/lamp-automation-v1/Button_Press/source/Ble2Manager.mc"; @line = 6; ]
+<init> {
+}
